@@ -12,6 +12,7 @@
 ## Should
 
 - Spot-check CSRF/session logout behavior when in acceptance.
+- Use Playwright MCP for behavioral evidence when mapped in `shared/mcp-tools.md` **and** the server is available in project `mcp.json`; otherwise stack/manual.
 
 ## Forbidden
 

@@ -14,7 +14,7 @@
 - Advance lifecycle on incomplete envelope
 - Mark done without evidence rows
 - Self-close: same session finishes build verify and accept
-- Invent verify runners not listed in `stack.md`
+- Invent verify runners not listed in `stack.md` (MCP tool use per `shared/mcp-tools.md` is not an invented runner; invented = arbitrary CLI outside stack/OUTBOX)
 - Start neighbor role after module DoD in the same turn
 - Parallel OUTBOX (v1 is serial only)
 - Change harness structure during case execution

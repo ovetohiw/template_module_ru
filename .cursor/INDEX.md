@@ -12,6 +12,8 @@
 | [shared/harness-principles.md](shared/harness-principles.md) | Constitution |
 | [shared/invariants.md](shared/invariants.md) | Runtime soft/hard |
 | [shared/stack.md](shared/stack.md) | Verify/run command slots |
+| [shared/mcp-tools.md](shared/mcp-tools.md) | MCP policy map (when / which) |
+| [mcp.json](mcp.json) | Project MCP declarations (no secrets) |
 | [TEMPLATE.md](TEMPLATE.md) | Human bootstrap + conventions map |
 | [skills/](skills/) | Entry skills |
 

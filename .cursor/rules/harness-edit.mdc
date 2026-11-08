@@ -4,6 +4,8 @@ alwaysApply: false
 globs:
   - AGENTS.md
   - .cursor/shared/harness-*
+  - .cursor/shared/mcp-tools.md
+  - .cursor/mcp.json
   - .cursor/orchestrator/LIFECYCLE.md
   - .cursor/orchestrator/LAYERS.md
   - .cursor/orchestrator/ROUTING.md
@@ -22,6 +24,7 @@ Before changing harness structure, read `.cursor/shared/harness-principles.md`.
 - Clarify one module process; fix links/payloads; golden examples; INDEX sync.
 - Add/edit **role-prefixed** conventions in the **owning** module (`eng-*`/`qa-*`/`sec-*`/`analyst-*`) + INDEX line; keep eng/sec/qa angles distinct.
 - Tighten wording without meaning change.
+- Add MCP server declaration without secrets + matching line in `shared/mcp-tools.md`.
 
 ## Hard (ask human)
 
@@ -31,6 +34,7 @@ Before changing harness structure, read `.cursor/shared/harness-principles.md`.
 - Copy/fork across roles (`eng-test`↔`qa-test`, `eng-web`↔`sec-web`, …).
 - Convention/constraints relay via OUTBOX; cross-read foreign conventions.
 - Surfaces outside web/desktop/bots without human hard; empty convention stubs; alwaysApply on conventions.
+- Secrets in `mcp.json`; unpinned `@latest` as default MCP package; always-on dangerous eval/XSS MCP; require MCP for bots/desktop without human; MCP policy/config inside `modules/*/conventions`.
 
 ## End checklist
 
