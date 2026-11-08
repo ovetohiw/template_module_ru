@@ -27,4 +27,10 @@
 | [eng-desktop.md](eng-desktop.md) | desktop |
 | [eng-bots.md](eng-bots.md) | bots |
 
-Also honor FEATURE (Security must) + package acceptance. Never read foreign conventions. Runners → `shared/stack.md`.
+## Visual pack (only if CASE `design_status=done`)
+
+| File | When |
+|------|------|
+| [eng-ui.md](eng-ui.md) | design pack SoR — do **not** load when skipped/not_applicable |
+
+Also honor FEATURE (Security must) + package acceptance + design pack paths when done. Never read foreign conventions. Runners → `shared/stack.md`.

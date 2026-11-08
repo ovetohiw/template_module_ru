@@ -10,7 +10,7 @@ Immutable without human hard approval. Keep this file ≤1 screen.
 6. **Evidence before done** — no summary-only close; no role self-close.
 7. **One role per session** — autonomy C only inside engineering stages.
 8. **SoR matrix** — status only in CASE / INBOX / OUTBOX / handoffs.log / role PROGRESS.
-9. **Load isolation** — no foreign `modules/*/processes` or `conventions`; conventions are **role-prefixed** (`eng-*`/`qa-*`/`sec-*`/`analyst-*`), never travel via OUTBOX; load **core** always, **domain** by package trigger, **surface** only if id ∈ CASE/FEATURE `surfaces[]` (web|desktop|bots); `shared/stack.md`, `shared/mcp-tools.md`, `invariants`, `evidence-schema` are allowed shared reads (not convention relay).
+9. **Load isolation** — no foreign `modules/*/processes` or `conventions`; conventions are **role-prefixed** (`eng-*`/`qa-*`/`sec-*`/`analyst-*`/`design-*`), never travel via OUTBOX; load **core** always, **domain** by package trigger, **surface** only if id ∈ CASE/FEATURE `surfaces[]` (web|desktop|bots); `shared/stack.md`, `shared/mcp-tools.md`, `invariants`, `evidence-schema` are allowed shared reads (not convention relay).
 10. **Contracts before prose** — new layer/hop needs schema under `orchestrator/contracts/`.
 11. **Skills thin** — skills are entrypoints; they do not duplicate full DoD.
 12. **No always-load-all** — alwaysApply must not load every module.

@@ -22,7 +22,7 @@ Before changing harness structure, read `.cursor/shared/harness-principles.md`.
 ## Soft
 
 - Clarify one module process; fix links/payloads; golden examples; INDEX sync.
-- Add/edit **role-prefixed** conventions in the **owning** module (`eng-*`/`qa-*`/`sec-*`/`analyst-*`) + INDEX line; keep eng/sec/qa angles distinct.
+- Add/edit **role-prefixed** conventions in the **owning** module (`eng-*`/`qa-*`/`sec-*`/`analyst-*`/`design-*`) + INDEX line; keep eng/sec/qa/design angles distinct.
 - Tighten wording without meaning change.
 - Add MCP server declaration without secrets + matching line in `shared/mcp-tools.md`.
 
@@ -40,4 +40,4 @@ Before changing harness structure, read `.cursor/shared/harness-principles.md`.
 
 - Principles read; placement ok; root thin; INDEX updated.
 - Prefixed names; who reads/does not; process→conventions/INDEX; `surfaces[]` gate documented.
-- eng≠qa≠sec angles; no stale unprefixed paths; size budget; changelog entry.
+- eng≠qa≠sec≠design angles; no stale unprefixed paths; size budget; changelog entry.

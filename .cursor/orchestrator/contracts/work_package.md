@@ -4,7 +4,7 @@ Analyst `spec` payload must include `work_packages[]`:
 
 ```text
 id:                      # unique string
-layer:                   # from LAYERS.md
+layer:                   # allowlist only (below)
 goal:                    # one clear outcome
 depends_on: []           # other package ids
 acceptance: []           # observable checks
@@ -14,7 +14,9 @@ constraints: []          # optional
 
 ## Rules
 
-- `layer` must be an abstract layer id
+- `layer` allowlist: **`security` | `implementation` | `verification` only**
+- `design`, `requirements`, `acceptance` are stage/envelope hops — **never** `work_package.layer`
 - no `.cursor/modules/...` paths
 - deps must exist and be acyclic
 - `verification` must depend on `implementation` (default)
+- when CASE `design_status=done`: every `implementation` package must list design pack path in `artifacts_expected` or `constraints`

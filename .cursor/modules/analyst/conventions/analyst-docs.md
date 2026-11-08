@@ -7,6 +7,7 @@
 - Scenarios under `cases/current/behavior/`; FEATURE keeps short contract + Behavior paths.
 - Include `surfaces: []` (web|desktop|bots) on FEATURE; keep in sync with CASE.
 - Leave Security must/should stubs for security hop to fill.
+- When web|desktop: stub FEATURE.design (+ design_skip / reason per uidesign policy); do not synthesize visual pack.
 - Observable acceptance only; hard to human if behavior unknown.
 - Accept: sync behavior or `unchanged` + reason.
 

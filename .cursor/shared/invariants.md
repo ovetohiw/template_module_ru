@@ -18,6 +18,7 @@
 - Start neighbor role after module DoD in the same turn
 - Parallel OUTBOX (v1 is serial only)
 - Change harness structure during case execution
+- Invent `design_skip` from chat; run plan_review while `design_status=pending`; eng freestyle UI when `design_status=done` (must follow pack)
 
 ## Evidence
 

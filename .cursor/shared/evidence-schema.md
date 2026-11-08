@@ -10,6 +10,7 @@ Every acceptance criterion / required check needs one row:
 | artifact | path or log ref |
 | role | which module authored the row |
 | session | date or session id |
+| rework_target | on **fail** rows: `implementation` \| `design` \| `requirements` (optional; default implementation) |
 
 ## Invalid proof
 

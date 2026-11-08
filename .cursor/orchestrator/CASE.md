@@ -4,6 +4,8 @@
 - stage: closed
 - status: done
 - surfaces: [web]
+- design_status: skipped
+- design_rework_from:
 - assigned_module:
 - active_package_id:
 - rounds: { verification_fail_wp-ver-1: 1 }
@@ -15,4 +17,6 @@
   - handoffs: cases/current/handoffs.log.md
   - evidence: cases/current/evidence.md
   - behavior: cases/current/behavior/
+  - refs: cases/current/refs/
+  - design: cases/current/design/
 - raw_brief: "хочу чтобы был сайт и у него будет бд, авторизация, должен быть UI"

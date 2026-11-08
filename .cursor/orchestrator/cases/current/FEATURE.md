@@ -4,6 +4,12 @@
 - Title: Simple site with DB, auth, UI
 - Status: in_progress
 - surfaces: [web]
+- design_skip: true
+- design_skip_reason: "golden protocol; no visual refs"
+- design:
+  refs_index: cases/current/refs/_index.md
+  pack: cases/current/design/
+  screens: []
 - Goal: Users can register/login and see a basic authenticated UI backed by a database.
 - Scope in:
   - Web UI shell
