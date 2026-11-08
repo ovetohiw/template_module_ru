@@ -1,0 +1,41 @@
+---
+description: Rules when editing the harness template structure under .cursor or root AGENTS.md
+alwaysApply: false
+globs:
+  - AGENTS.md
+  - .cursor/shared/harness-*
+  - .cursor/orchestrator/LIFECYCLE.md
+  - .cursor/orchestrator/LAYERS.md
+  - .cursor/orchestrator/ROUTING.md
+  - .cursor/orchestrator/contracts/**
+  - .cursor/rules/**
+  - .cursor/modules/*/AGENTS.md
+  - .cursor/modules/*/conventions/**
+---
+
+# Harness edit mode
+
+Before changing harness structure, read `.cursor/shared/harness-principles.md`.
+
+## Soft
+
+- Clarify one module process; fix links/payload templates; add golden example; sync INDEX.
+- Edit/add **role-specific** conventions inside **one** owning module (+ INDEX line); must/should present.
+- Tighten wording without meaning change; sync module AGENTS link to conventions.
+
+## Hard (ask human)
+
+- Add/remove/rename module; change FSM/layers; move process out of `.cursor/`; fatten root AGENTS.
+- Peer-handoff; weaken evidence/self-close; alwaysApply that loads all modules; duplicate canon into skills; second status SoR.
+- Put conventions in `shared/` / overlays / repo root.
+- Universal convention “for all roles”; copy/fork canon across modules (esp. security).
+- Convention/constraints relay via OUTBOX; cross-read foreign `conventions/`.
+- AlwaysApply on conventions; ship empty convention stubs without must/should.
+
+## End checklist
+
+- Principles read; placement ok; root still thin; INDEX updated.
+- LIFECYCLE/ROUTING/contracts aligned; isolation ok.
+- Convention file states who reads / who does not; process links to `conventions/INDEX`.
+- No convention travel via contract; size budget ok.
+- Note in `.cursor/shared/harness-changelog.md`.

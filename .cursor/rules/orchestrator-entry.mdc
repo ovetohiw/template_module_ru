@@ -1,0 +1,14 @@
+---
+description: Case-mode default — orchestrator bootstrap; do not load all modules
+alwaysApply: true
+---
+
+# Orchestrator entry (case mode)
+
+Default session role is orchestrator.
+
+1. Read root `AGENTS.md` → `.cursor/orchestrator/AGENTS.md` bootstrap.
+2. Do not read `.cursor/modules/*/processes` unless OUTBOX assigns that module and this is a module turn.
+3. Soft/hard: `.cursor/shared/invariants.md`.
+4. After module DoD: stop; do not start the next role in the same turn.
+5. Harness structural edits are not case work — see `harness-edit.mdc` when changing harness files.

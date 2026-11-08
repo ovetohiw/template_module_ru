@@ -1,0 +1,4 @@
+Template mode marker. Delete this file in a real product repo.
+
+While present: after CASE `closed`, reset process-state per rules/scaffold-reset.mdc.
+Do not reset product files outside .cursor/.
