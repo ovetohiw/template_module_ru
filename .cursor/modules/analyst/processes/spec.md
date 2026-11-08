@@ -2,20 +2,18 @@
 
 ## Do
 
-1. Read [../conventions/INDEX.md](../conventions/INDEX.md) (docs.md; uidesign.md if UI).
-2. Read raw brief from CASE / OUTBOX (not from other modules).
-3. Fill `cases/current/FEATURE.md` — observable behavior, scope in/out, acceptance.
-4. Write behavior scenarios under `cases/current/behavior/` (one file per scenario).
-5. Produce `work_packages[]` for abstract layers only; write `cases/current/plan.md`.
-6. List open_questions; hard-stop if behavior cannot be stated without guessing.
+1. Read [../conventions/INDEX.md](../conventions/INDEX.md) → analyst-docs; analyst-uidesign if GUI.
+2. Set CASE/FEATURE `surfaces: []` (web|desktop|bots) from the brief.
+3. Read raw brief from CASE / OUTBOX (not other modules).
+4. Fill FEATURE — goal, scope, acceptance, behavior paths, Security stubs.
+5. Write behavior under `cases/current/behavior/`.
+6. Produce `work_packages[]` (layer ids only) → `plan.md`.
+7. Hard-stop if behavior unknown.
 
 ## Do not
 
-- Write product code
-- Name module folders in packages
-- Route to security/qa/engineering
-- Skip empty acceptance
+- Product code; module folder names in packages; route to other roles; empty acceptance.
 
 ## Out
 
-INBOX verdict `pass` or `needs_input`/`blocked` with requirements payload.
+INBOX `pass` | `needs_input` | `blocked` with requirements payload.

@@ -40,4 +40,4 @@ Ready = deps satisfied. One OUTBOX at a time.
 
 ## Conventions
 
-Do **not** copy or relay `modules/*/conventions` via OUTBOX. Downstream modules read FEATURE / plan / evidence and their **own** conventions only. Security must live in FEATURE after security hop.
+Do **not** copy or relay `modules/*/conventions` via OUTBOX. Downstream modules read FEATURE / plan / evidence and their **own** role-prefixed conventions only (gated by `surfaces[]`). Security must live in FEATURE after security hop. `shared/stack.md` is allowed for runners.

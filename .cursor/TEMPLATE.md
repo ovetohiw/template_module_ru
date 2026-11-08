@@ -4,43 +4,45 @@ Copy into a product repo: root `AGENTS.md` + entire `.cursor/` (+ this README st
 
 ## After clone
 
-1. **Delete** [.cursor/SCAFFOLD](SCAFFOLD) in a real product (must). While present, closed cases reset process-state.
+1. **Delete** [SCAFFOLD](SCAFFOLD) in a real product (must).
 2. Fill root [README.md](../README.md) for the product only.
-3. Fill [.cursor/shared/stack.md](shared/stack.md) when commands exist.
-4. Start work: `/new-case` + brief → OUTBOX analyst. Continue with `/continue` / role skills per OUTBOX.
+3. Fill [shared/stack.md](shared/stack.md) when commands exist.
+4. Start: `/new-case` + brief → OUTBOX analyst. Continue with `/continue` / role skills per OUTBOX.
 
 ## Day-to-day
 
 - Map: [INDEX.md](INDEX.md)
 - Orchestrator: [orchestrator/AGENTS.md](orchestrator/AGENTS.md)
 - Principles: [shared/harness-principles.md](shared/harness-principles.md)
-- Golden demo case: [orchestrator/cases/current/](orchestrator/cases/current/) (replace for real work)
+- Golden demo: [orchestrator/cases/current/](orchestrator/cases/current/)
 
 ## Conventions
 
-Each module has role-specific rules under `modules/<role>/conventions/`. Modules read **only their own**. Conventions never travel via OUTBOX; case work uses FEATURE/plan/evidence/findings.
+- Live under `modules/<role>/conventions/` with **role prefixes** (`eng-*`, `qa-*`, `sec-*`, `analyst-*`).
+- Modules read **only their own**; conventions **never** travel via OUTBOX.
+- CASE/FEATURE field `surfaces: []` ⊂ {web, desktop, bots} gates `*-web|desktop|bots` files.
+- Domain files (`eng-db|network|io`) open only when the package touches that domain.
+- Runners: `shared/stack.md` (allowed shared read — not a convention relay).
+- eng / sec / qa keep different angles on the same surface (build / FEATURE-must / verify) — no copy-paste canon.
 
 ## Editing this template
 
-Harness edit ≠ case execution. Read [shared/harness-principles.md](shared/harness-principles.md) and [rules/harness-edit.mdc](rules/harness-edit.mdc).
+Read [shared/harness-principles.md](shared/harness-principles.md) and [rules/harness-edit.mdc](rules/harness-edit.mdc).
 
-- Soft: one-module process clarify; role-specific convention edits inside one module; link fixes; INDEX sync.
-- Hard: new/remove module; FSM/layers change; process outside `.cursor/`; fat root AGENTS; peer-handoff; weaken evidence; shared/overlays conventions; universal conventions; convention relay via contract; cross-read foreign conventions; empty convention stubs in shipped template.
-- Log structural changes in [shared/harness-changelog.md](shared/harness-changelog.md) only.
+- Soft: one-module process; prefixed convention edits in owning module + INDEX.
+- Hard: shared/overlays conventions; universal conventions; unprefixed collisions; cross-role copy; convention relay; surfaces outside web/desktop/bots without human; empty stubs; fat root AGENTS; peer-handoff.
+- Log in [shared/harness-changelog.md](shared/harness-changelog.md).
 
-## Manual audit (v1 ship) — 2026-11-08
+## Manual audit
 
 | Check | Result |
 |-------|--------|
-| raw intake → qa OUTBOX? | NO (handoffs + qa skill) |
+| raw intake → qa OUTBOX? | NO |
 | process outside `.cursor/`? | NO |
 | root AGENTS thin? | YES |
-| parallel OUTBOX? | NO (serial v1) |
-| handoffs.log append-only used? | YES |
-| plan_review mechanical only? | YES |
-| harness-edit alwaysApply? | NO |
-| case PROGRESS ≠ harness-changelog? | YES |
-| hub-and-spoke silently breakable without rule? | NO (invalid envelope + principles) |
-| golden E2E + rework hop present? | YES |
-| conventions local only (no OUTBOX relay)? | YES |
-| convention files role-filled (not empty stubs)? | YES |
+| conventions local + prefixed? | YES |
+| `surfaces[]` gate? | YES |
+| eng-test ≠ qa-test? | YES |
+| qa-desktop present? | YES |
+| shared/stack OK for runners? | YES |
+| convention OUTBOX relay? | NO |

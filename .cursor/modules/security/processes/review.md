@@ -1,7 +1,7 @@
 # Process: security review
 
-1. Read [../conventions/security.md](../conventions/security.md).
-2. Read package goal + FEATURE from OUTBOX artifacts.
-3. Fill must[] / should[]; **write them into FEATURE Security section** (case SoR).
-4. INBOX payload mirrors must/should; `blocked` if unresolved ambiguity.
-5. No code changes. Do not attach convention files to OUTBOX. Stop.
+1. Read [../conventions/INDEX.md](../conventions/INDEX.md): sec-security + surface files per `surfaces[]`.
+2. Read package + FEATURE from case artifacts.
+3. Fill must[]/should[]; **write into FEATURE Security section**.
+4. INBOX mirrors must/should; `blocked` on unresolved security ambiguity.
+5. No code; no convention files in OUTBOX. Stop.

@@ -3,6 +3,7 @@
 - ID: golden-web-001
 - Title: Simple site with DB, auth, UI
 - Status: in_progress
+- surfaces: [web]
 - Goal: Users can register/login and see a basic authenticated UI backed by a database.
 - Scope in:
   - Web UI shell

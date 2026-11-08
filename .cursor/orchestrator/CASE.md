@@ -3,6 +3,7 @@
 - case_id: golden-web-001
 - stage: closed
 - status: done
+- surfaces: [web]
 - assigned_module:
 - active_package_id:
 - rounds: { verification_fail_wp-ver-1: 1 }

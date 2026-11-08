@@ -1,10 +1,19 @@
 # QA conventions
 
-**Who reads:** qa module only.  
-**Who does not:** other modules.
+**Who reads:** qa only. Brief = verification package + case artifacts — never raw intake alone.
 
-| File | Open when |
-|------|-----------|
-| [test.md](test.md) | Every verification package |
+## Core
 
-Brief must be verification package + case artifacts — never raw intake alone. Do not read eng/security conventions folders.
+| File | When |
+|------|------|
+| [qa-test.md](qa-test.md) | Every verification package |
+
+## Surface (only if id ∈ CASE/FEATURE `surfaces[]`)
+
+| File | Surface |
+|------|---------|
+| [qa-web.md](qa-web.md) | web |
+| [qa-desktop.md](qa-desktop.md) | desktop |
+| [qa-bots.md](qa-bots.md) | bots |
+
+Empty `surfaces` → core only. Never read eng/security conventions.

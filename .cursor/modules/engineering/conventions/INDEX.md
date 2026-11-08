@@ -1,12 +1,30 @@
 # Engineering conventions
 
-**Who reads:** engineering module only.  
-**Who does not:** other modules.
+**Who reads:** engineering only.
 
-| File | Open when |
-|------|-----------|
-| [development.md](development.md) | Any code change for the package |
-| [tooling.md](tooling.md) | Running/verifying build commands |
-| [config.md](config.md) | Config, env, defaults |
+## Core (always)
 
-Also honor case FEATURE (incl. Security must section) and package acceptance from OUTBOX. Do not read `modules/security/conventions`.
+| File | When |
+|------|------|
+| [eng-development.md](eng-development.md) | Any code change |
+| [eng-test.md](eng-test.md) | Writing/running tests at build |
+| [eng-tooling.md](eng-tooling.md) | Invoking build/test commands |
+| [eng-config.md](eng-config.md) | Config/env/defaults |
+
+## Domain (open only if package touches)
+
+| File | Trigger |
+|------|---------|
+| [eng-db.md](eng-db.md) | DB/persistence/migrations |
+| [eng-network.md](eng-network.md) | HTTP/RPC/outbound clients |
+| [eng-io.md](eng-io.md) | Files, uploads, paths |
+
+## Surface (only if id ∈ CASE/FEATURE `surfaces[]`)
+
+| File | Surface |
+|------|---------|
+| [eng-web.md](eng-web.md) | web |
+| [eng-desktop.md](eng-desktop.md) | desktop |
+| [eng-bots.md](eng-bots.md) | bots |
+
+Also honor FEATURE (Security must) + package acceptance. Never read foreign conventions. Runners → `shared/stack.md`.

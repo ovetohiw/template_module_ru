@@ -19,23 +19,21 @@ Before changing harness structure, read `.cursor/shared/harness-principles.md`.
 
 ## Soft
 
-- Clarify one module process; fix links/payload templates; add golden example; sync INDEX.
-- Edit/add **role-specific** conventions inside **one** owning module (+ INDEX line); must/should present.
-- Tighten wording without meaning change; sync module AGENTS link to conventions.
+- Clarify one module process; fix links/payloads; golden examples; INDEX sync.
+- Add/edit **role-prefixed** conventions in the **owning** module (`eng-*`/`qa-*`/`sec-*`/`analyst-*`) + INDEX line; keep eng/sec/qa angles distinct.
+- Tighten wording without meaning change.
 
 ## Hard (ask human)
 
-- Add/remove/rename module; change FSM/layers; move process out of `.cursor/`; fatten root AGENTS.
-- Peer-handoff; weaken evidence/self-close; alwaysApply that loads all modules; duplicate canon into skills; second status SoR.
-- Put conventions in `shared/` / overlays / repo root.
-- Universal convention “for all roles”; copy/fork canon across modules (esp. security).
-- Convention/constraints relay via OUTBOX; cross-read foreign `conventions/`.
-- AlwaysApply on conventions; ship empty convention stubs without must/should.
+- Add/remove/rename module; FSM/layers change; process outside `.cursor/`; fat root AGENTS.
+- Peer-handoff; weaken evidence/self-close; alwaysApply loading all modules; duplicate canon into skills; second status SoR.
+- Conventions in `shared/`/overlays/root; universal “for all roles”; unprefixed names that collide; leave old unprefixed beside new.
+- Copy/fork across roles (`eng-test`↔`qa-test`, `eng-web`↔`sec-web`, …).
+- Convention/constraints relay via OUTBOX; cross-read foreign conventions.
+- Surfaces outside web/desktop/bots without human hard; empty convention stubs; alwaysApply on conventions.
 
 ## End checklist
 
-- Principles read; placement ok; root still thin; INDEX updated.
-- LIFECYCLE/ROUTING/contracts aligned; isolation ok.
-- Convention file states who reads / who does not; process links to `conventions/INDEX`.
-- No convention travel via contract; size budget ok.
-- Note in `.cursor/shared/harness-changelog.md`.
+- Principles read; placement ok; root thin; INDEX updated.
+- Prefixed names; who reads/does not; process→conventions/INDEX; `surfaces[]` gate documented.
+- eng≠qa≠sec angles; no stale unprefixed paths; size budget; changelog entry.

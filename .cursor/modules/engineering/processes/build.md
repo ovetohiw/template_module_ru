@@ -1,7 +1,7 @@
 # Process: build
 
-1. Read [../conventions/INDEX.md](../conventions/INDEX.md) (development/tooling/config as needed).
-2. Read package acceptance + FEATURE (incl. Security must section) from case artifacts.
-3. Optionally break into exec-plan stages (autonomy C between stages only).
-4. Implement; run checks only from stack.md / OUTBOX.
-5. INBOX with implementation payload; stop. Do not call qa/accept. Do not read foreign conventions.
+1. Read [../conventions/INDEX.md](../conventions/INDEX.md): core; domain if db/network/io; surface if in `surfaces[]`.
+2. Read package acceptance + FEATURE (Security must) from case artifacts.
+3. Optional exec-plan stages (autonomy C = stages only).
+4. Implement; write/run tests per eng-test; commands from stack.md / OUTBOX only.
+5. INBOX; stop. No qa/accept. No foreign conventions.

@@ -1,10 +1,19 @@
 # Security conventions
 
-**Who reads:** security module only.  
-**Who does not:** other modules — they read FEATURE security section / case artifacts, never this folder.
+**Who reads:** security only. Output → FEATURE Security section + INBOX (not convention files).
 
-| File | Open when |
-|------|-----------|
-| [security.md](security.md) | Every security review package |
+## Core
 
-Output of review: INBOX payload + update FEATURE «Security must/should». Do not ship these convention files through OUTBOX.
+| File | When |
+|------|------|
+| [sec-security.md](sec-security.md) | Every security review |
+
+## Surface (only if id ∈ CASE/FEATURE `surfaces[]`)
+
+| File | Surface |
+|------|---------|
+| [sec-web.md](sec-web.md) | web |
+| [sec-desktop.md](sec-desktop.md) | desktop |
+| [sec-bots.md](sec-bots.md) | bots |
+
+Empty `surfaces` → core only.
