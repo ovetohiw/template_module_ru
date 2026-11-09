@@ -1,11 +1,11 @@
 # Layer payload: security
 
 ```text
-must: []                 # blocking; also written into FEATURE Security must
-should: []               # also written into FEATURE Security should
+must: []                 # блокирующие; также пишутся в FEATURE Security must
+should: []               # также пишутся в FEATURE Security should
 feature_security_updated: true|false
-blocked_reason:          # if verdict=blocked
-refs: []                 # case artifact paths only — never modules/*/conventions
+blocked_reason:          # если verdict=blocked
+refs: []                 # только пути артефактов кейса — никогда modules/*/conventions
 ```
 
-Conventions stay in security module. Case SoR for downstream = FEATURE Security section + this payload, not convention file relay.
+Conventions остаются в модуле security. Case SoR для downstream = секция FEATURE Security + этот payload, не relay convention-файлов.

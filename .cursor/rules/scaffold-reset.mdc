@@ -1,5 +1,5 @@
 ---
-description: When .cursor/SCAFFOLD exists, reset case process-state after closed pipeline
+description: Когда есть .cursor/SCAFFOLD, сбрасывай process-state кейса после закрытого пайплайна
 alwaysApply: false
 globs:
   - .cursor/SCAFFOLD
@@ -8,12 +8,12 @@ globs:
 
 # SCAFFOLD reset
 
-If `.cursor/SCAFFOLD` exists and CASE stage is `closed`:
+Если существует `.cursor/SCAFFOLD` и CASE stage = `closed`:
 
-- Reset CASE, PROGRESS, INBOX, OUTBOX to empty templates (include `design_status`)
-- Clear `cases/current/` feature/plan/evidence/behavior/handoffs to templates
-- Reset `cases/current/refs/` and `cases/current/design/` to empty templates (`_index.md`, TOKENS/SCREENS/COMPONENTS/DECISIONS)
-- Do **not** delete product files outside `.cursor/`
-- Do **not** delete harness canon (modules, contracts, shared principles)
+- Сбрось CASE, PROGRESS, INBOX, OUTBOX к пустым шаблонам (включая `design_status`)
+- Очисти `cases/current/` feature/plan/evidence/behavior/handoffs до шаблонов
+- Сбрось `cases/current/refs/` и `cases/current/design/` к пустым шаблонам (`_index.md`, TOKENS/SCREENS/COMPONENTS/DECISIONS)
+- **Не** удаляй файлы продукта вне `.cursor/`
+- **Не** удаляй канон харнесса (modules, contracts, shared principles)
 
-Without SCAFFOLD marker: no automatic reset (normal project).
+Без маркера SCAFFOLD: автоматического reset нет (обычный проект).

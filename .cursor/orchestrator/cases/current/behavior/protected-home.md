@@ -1,9 +1,9 @@
-# Scenario: protected home
+# Сценарий: protected home
 
 ## Happy path
 
-1. Authenticated user opens `/` (or home) → protected home content visible.
+1. Authenticated пользователь открывает `/` (или home) → виден контент protected home.
 
 ## Failures
 
-- Anonymous user opens home → redirected to login; no protected content.
+- Анонимный пользователь открывает home → redirect на login; без protected-контента.

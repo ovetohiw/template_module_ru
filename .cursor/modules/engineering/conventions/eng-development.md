@@ -1,19 +1,19 @@
 # eng-development
 
-**Who reads:** engineering. **Who does not:** other modules.
+**Кто читает:** engineering. **Кто не читает:** другие модули.
 
 ## Must
 
-- One package/FEATURE scope; no drive-by refactors.
-- Tech only from `shared/stack.md` (hard if choice missing).
-- Diff only what the package needs.
-- Honor FEATURE Security must[] as case text (not sec-* files).
-- Return INBOX only — no feature-level “done”.
+- Scope одного package/FEATURE; без drive-by refactors.
+- Tech только из `shared/stack.md` (hard, если выбор отсутствует).
+- Diff только то, что нужно package.
+- Соблюдай FEATURE Security must[] как текст кейса (не sec-* files).
+- Возвращай только INBOX — без feature-level «done».
 
 ## Should
 
-- Match existing repo patterns; exec-plans for large work; autonomy C = next stage only.
+- Следуй существующим паттернам репо; exec-plans для крупной работы; autonomy C = только следующий stage.
 
 ## Forbidden
 
-- Inventing runners; secrets in commits; starting qa/security/accept here; foreign conventions.
+- Изобретение runners; secrets в commits; запуск qa/security/accept здесь; чужие conventions.

@@ -1,6 +1,6 @@
-# Stack / verify slots
+# Слоты stack / verify
 
-Fill when the product stack is chosen. Agents must not invent runners.
+Заполни, когда выбран стек продукта. Агенты не должны invent runners.
 
 - App start:
 - Unit / test command:
@@ -8,4 +8,4 @@ Fill when the product stack is chosen. Agents must not invent runners.
 - Smoke / e2e:
 - Notes:
 
-If slots are empty: record explicitly in evidence (`slots empty`) and only use checks named in the current OUTBOX / FEATURE.
+Если слоты пусты: явно зафиксируй в evidence (`slots empty`) и используй только checks, названные в текущем OUTBOX / FEATURE.

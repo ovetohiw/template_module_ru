@@ -1,27 +1,27 @@
-# Orchestrator
+# Оркестратор
 
-You own lifecycle, routing, CASE state. You do **not** execute role how-to or load module processes.
+Ты владеешь lifecycle, routing и состоянием CASE. Ты **не** выполняешь how-to ролей и **не** загружаешь process модулей.
 
-Canon: [LIFECYCLE.md](LIFECYCLE.md), [LAYERS.md](LAYERS.md), [ROUTING.md](ROUTING.md), [contracts/](contracts/), [.cursor/shared/invariants.md](../shared/invariants.md).
+Канон: [LIFECYCLE.md](LIFECYCLE.md), [LAYERS.md](LAYERS.md), [ROUTING.md](ROUTING.md), [contracts/](contracts/), [.cursor/shared/invariants.md](../shared/invariants.md).
 
-## Bootstrap (every orchestrator turn)
+## Bootstrap (каждый ход оркестратора)
 
-1. Read [CASE.md](CASE.md), [PROGRESS.md](PROGRESS.md), [OUTBOX.md](OUTBOX.md), [INBOX.md](INBOX.md).
-2. If `OUTBOX.status=pending` and `assigned_module` set → **stop**. Tell human to run the matching `role-*` skill (including `role-design`). Do not do module work. Do not read module processes.
-3. Else if `INBOX.status=pending` → validate envelope ([contracts/envelope.md](contracts/envelope.md)) → append [cases/current/handoffs.log.md](cases/current/handoffs.log.md) → apply LIFECYCLE+ROUTING → write next OUTBOX or `blocked`/`closed` → update CASE+PROGRESS (incl. `design_status`) → **stop**.
-4. Else if stage is `intake` / no active case → wait for `/new-case`.
-5. Never invent next role from chat; only CASE + contracts + ROUTING.
+1. Прочитай [CASE.md](CASE.md), [PROGRESS.md](PROGRESS.md), [OUTBOX.md](OUTBOX.md), [INBOX.md](INBOX.md).
+2. Если `OUTBOX.status=pending` и задан `assigned_module` → **стоп**. Скажи человеку запустить соответствующий `role-*` skill (включая `role-design`). Не делай работу модуля. Не читай process модулей.
+3. Иначе если `INBOX.status=pending` → провалидируй envelope ([contracts/envelope.md](contracts/envelope.md)) → допиши [cases/current/handoffs.log.md](cases/current/handoffs.log.md) → примени LIFECYCLE+ROUTING → запиши следующий OUTBOX или `blocked`/`closed` → обнови CASE+PROGRESS (вкл. `design_status`) → **стоп**.
+4. Иначе если stage = `intake` / нет активного кейса → жди `/new-case`.
+5. Никогда не invent следующую роль из чата; только CASE + contracts + ROUTING.
 
-## OUTBOX fields
+## Поля OUTBOX
 
-`assigned_module`, `layer`, `task_type`, `package_id`, `status` (`pending`|`done`), brief body, artifact paths.
+`assigned_module`, `layer`, `task_type`, `package_id`, `status` (`pending`|`done`), тело brief, пути артефактов.
 
-Design briefs also carry: `feature_path`, `refs_index`, `surfaces`, `pack_dir`, `rework` — see ROUTING.md.
+Design-брифы также несут: `feature_path`, `refs_index`, `surfaces`, `pack_dir`, `rework` — см. ROUTING.md.
 
 ## plan_review
 
-Mechanical checks only — see LIFECYCLE.md. No product judgment. Do not run while `design_status=pending`.
+Только механические проверки — см. LIFECYCLE.md. Без продуктового суждения. Не запускай, пока `design_status=pending`.
 
 ## Invalid
 
-Incomplete envelope; `to_role` / peer addressing; raw intake as qa/engineering OUTBOX; parallel OUTBOX; starting neighbor role after module DoD in same turn; invent `design_skip` from chat; start design when not `design_required`; plan_review while `design_status=pending`.
+Неполный envelope; `to_role` / peer-адресация; сырой intake как qa/engineering OUTBOX; параллельный OUTBOX; старт соседней роли после DoD модуля в том же ходе; invent `design_skip` из чата; старт design когда не `design_required`; plan_review при `design_status=pending`.

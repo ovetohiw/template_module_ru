@@ -1,20 +1,20 @@
 # sec-security
 
-**Who reads:** security. **Who does not:** eng/qa (consume FEATURE must).
+**Кто читает:** security. **Кто не читает:** eng/qa (потребляют FEATURE must).
 
 ## Must
 
-- No secrets in repo, chat, FEATURE, evidence — placeholders only.
-- AuthN on trusted side; passwords as strong hashes (not reversible storage).
+- Без secrets в repo, chat, FEATURE, evidence — только placeholders.
+- AuthN на trusted side; passwords как strong hashes (не reversible storage).
 - AuthZ server-side; UI hide ≠ authorization.
-- Write blocking items to FEATURE Security must[] (M1…); should[] for non-blocking.
-- `blocked` if ambiguity would weaken authz/secrets — no guessed pass.
-- Client input untrusted for security decisions.
+- Пиши blocking items в FEATURE Security must[] (M1…); should[] для non-blocking.
+- `blocked`, если ambiguity ослабит authz/secrets — без guessed pass.
+- Client input untrusted для security decisions.
 
 ## Should
 
-- Minimal privilege language; session lifetime/revocation when auth in scope.
+- Язык minimal privilege; session lifetime/revocation, когда auth в scope.
 
 ## Forbidden
 
-- Product code; editing other modules’ conventions; OUTBOX convention relay; weakening must to force green.
+- Product code; правка conventions других модулей; relay conventions через OUTBOX; ослабление must ради зелёного статуса.

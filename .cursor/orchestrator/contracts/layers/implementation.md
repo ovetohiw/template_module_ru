@@ -3,7 +3,7 @@
 ```text
 package_id:
 changed_paths: []
-exec_plan_path:          # optional
-how_to_verify: []        # hints; commands only from stack.md or OUTBOX
+exec_plan_path:          # опционально
+how_to_verify: []        # подсказки; команды только из stack.md или OUTBOX
 notes: []
 ```

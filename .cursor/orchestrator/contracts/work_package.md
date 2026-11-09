@@ -1,22 +1,22 @@
-# work_package schema
+# Schema work_package
 
-Analyst `spec` payload must include `work_packages[]`:
+Payload analyst `spec` должен включать `work_packages[]`:
 
 ```text
-id:                      # unique string
-layer:                   # allowlist only (below)
-goal:                    # one clear outcome
-depends_on: []           # other package ids
-acceptance: []           # observable checks
-artifacts_expected: []   # paths or artifact kinds
-constraints: []          # optional
+id:                      # уникальная строка
+layer:                   # только allowlist (ниже)
+goal:                    # один ясный outcome
+depends_on: []           # ids других пакетов
+acceptance: []           # наблюдаемые проверки
+artifacts_expected: []   # пути или виды артефактов
+constraints: []          # опционально
 ```
 
-## Rules
+## Правила
 
-- `layer` allowlist: **`security` | `implementation` | `verification` only**
-- `design`, `requirements`, `acceptance` are stage/envelope hops — **never** `work_package.layer`
-- no `.cursor/modules/...` paths
-- deps must exist and be acyclic
-- `verification` must depend on `implementation` (default)
-- when CASE `design_status=done`: every `implementation` package must list design pack path in `artifacts_expected` or `constraints`
+- allowlist `layer`: **`security` | `implementation` | `verification` only**
+- `design`, `requirements`, `acceptance` — stage/envelope hops — **никогда** не `work_package.layer`
+- нет путей `.cursor/modules/...`
+- deps должны существовать и быть ацикличны
+- `verification` должен зависеть от `implementation` (по умолчанию)
+- когда CASE `design_status=done`: каждый пакет `implementation` должен перечислить путь design pack в `artifacts_expected` или `constraints`

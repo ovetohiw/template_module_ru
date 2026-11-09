@@ -4,9 +4,9 @@
 intake → analysis → design → plan_review → execution → acceptance → closed|blocked
 ```
 
-`design` stage runs only when `design_required` (see ROUTING). Otherwise analysis → plan_review.
+Стадия `design` запускается только когда `design_required` (см. ROUTING). Иначе analysis → plan_review.
 
-Execution packages (serial): `security` → `implementation` → `verification`.
+Пакеты execution (serial): `security` → `implementation` → `verification`.
 
 ## Stage vs package
 
@@ -24,45 +24,45 @@ design_required =
   AND FEATURE.design_skip != true
 ```
 
-| design_status | When |
+| design_status | Когда |
 |---------------|------|
-| `not_applicable` | no web/desktop in surfaces |
-| `skipped` | web\|desktop but `design_skip: true` + non-empty reason |
-| `pending` | design OUTBOX issued / synthesize or design-rework in flight |
+| `not_applicable` | нет web/desktop в surfaces |
+| `skipped` | web\|desktop, но `design_skip: true` + непустая reason |
+| `pending` | выдан design OUTBOX / synthesize или design-rework в полёте |
 | `done` | design pass; pack DoD ok |
 
-`design_skip: true` without reason → invalid / hard.
+`design_skip: true` без reason → invalid / hard.
 
-## Forbidden edges
+## Запрещённые рёбра
 
 - `intake` → `design` / `verification` / `implementation` / `security` / `acceptance`
-- `analysis` → `implementation` when `design_required` and `design_status` ≠ `done`
-- `design` → `execution` skipping `plan_review` (except design-rework path → re-issue implementation; see ROUTING)
-- raw user brief → qa or engineering OUTBOX
+- `analysis` → `implementation` когда `design_required` и `design_status` ≠ `done`
+- `design` → `execution` минуя `plan_review` (кроме пути design-rework → повторная выдача implementation; см. ROUTING)
+- сырой бриф пользователя → qa или engineering OUTBOX
 - module → module (peer hop)
-- parallel OUTBOX (v1)
-- `plan_review` while `design_status=pending`
+- параллельный OUTBOX (v1)
+- `plan_review` при `design_status=pending`
 
-## plan_review checks (mechanical)
+## Проверки plan_review (механические)
 
-Pass only if all true:
+Pass только если всё истинно:
 
-1. Every `work_package.layer` ∈ {security, implementation, verification}
-2. No module filesystem paths in packages
-3. `depends_on` ids exist; graph acyclic
-4. Each `verification` package depends on an `implementation` package (waiver default: denied)
-5. Required fields non-empty: `id`, `layer`, `goal`, `acceptance[]`, `artifacts_expected[]`
-6. Envelope from analyst `task_type=spec` is complete
-7. No `work_package.layer == design`
-8. If `design_required`: `design_status==done`, FEATURE.design.pack set, pack files TOKENS/SCREENS/COMPONENTS/DECISIONS exist and non-empty
-9. If `design_status==done`: **every** `implementation` package lists design pack path (`cases/current/design/` or FEATURE.design.pack) in `artifacts_expected` or `constraints`
-10. If `design_status==skipped`: FEATURE.design_skip_reason non-empty
-11. If `design_status==pending`: do **not** run plan_review (Invalid)
+1. Каждый `work_package.layer` ∈ {security, implementation, verification}
+2. Нет filesystem-путей модулей в пакетах
+3. Ids в `depends_on` существуют; граф ацикличен
+4. Каждый пакет `verification` зависит от пакета `implementation` (waiver по умолчанию: denied)
+5. Обязательные поля непусты: `id`, `layer`, `goal`, `acceptance[]`, `artifacts_expected[]`
+6. Envelope от analyst `task_type=spec` полный
+7. Нет `work_package.layer == design`
+8. Если `design_required`: `design_status==done`, FEATURE.design.pack задан, файлы pack TOKENS/SCREENS/COMPONENTS/DECISIONS существуют и непусты
+9. Если `design_status==done`: **каждый** пакет `implementation` перечисляет путь design pack (`cases/current/design/` или FEATURE.design.pack) в `artifacts_expected` или `constraints`
+10. Если `design_status==skipped`: FEATURE.design_skip_reason непустой
+11. Если `design_status==pending`: **не** запускай plan_review (Invalid)
 
-Fail → OUTBOX back to analyst `task_type=spec` with blocker list.  
-Do not clear `design_status=done` unless blockers say pack invalid.  
-Pass → `execution`; first ready package by ROUTING serial order.
+Fail → OUTBOX обратно analyst `task_type=spec` со списком blockers.  
+Не сбрасывай `design_status=done`, если blockers не говорят, что pack invalid.  
+Pass → `execution`; первый ready package по serial order из ROUTING.
 
 ## Rework
 
-On `fail` findings: `round++`, re-issue OUTBOX per `rework_target` (ROUTING). Max **2** rounds per fail class → else `blocked`.
+На findings с `fail`: `round++`, повторная выдача OUTBOX по `rework_target` (ROUTING). Макс. **2** раунда на класс фейла → иначе `blocked`.

@@ -3,6 +3,6 @@
 ```text
 gates: []                    # gate id → pass|fail + note
 failed_criteria: []
-docs_updated: []             # or unchanged[] + reason
+docs_updated: []             # или unchanged[] + reason
 evidence_complete: true|false
 ```

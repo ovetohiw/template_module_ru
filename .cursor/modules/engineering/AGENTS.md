@@ -2,9 +2,9 @@
 
 ## Start
 
-1. OUTBOX must assign `engineering`.
-2. Read shared invariants + [stack.md](../../shared/stack.md).
-3. Read [conventions/INDEX.md](conventions/INDEX.md): load **core**; **domain** if package touches db/network/io; **surface** only if id ∈ `surfaces[]`; load **eng-ui** only if CASE `design_status=done`.
-4. Honor FEATURE (Security must) + package acceptance + design pack when done — not foreign conventions.
-5. Run [processes/build.md](processes/build.md); optional exec-plans.
-6. Write INBOX; update PROGRESS; **stop**. No neighbor role.
+1. OUTBOX должен назначать `engineering`.
+2. Прочитай shared invariants + [stack.md](../../shared/stack.md).
+3. Прочитай [conventions/INDEX.md](conventions/INDEX.md): загрузи **core**; **domain**, если package затрагивает db/network/io; **surface** только если id ∈ `surfaces[]`; загружай **eng-ui** только если CASE `design_status=done`.
+4. Соблюдай FEATURE (Security must) + package acceptance + design pack при done — не чужие conventions.
+5. Выполни [processes/build.md](processes/build.md); опционально exec-plans.
+6. Запиши INBOX; обнови PROGRESS; **stop**. Без соседней роли.

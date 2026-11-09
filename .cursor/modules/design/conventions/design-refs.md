@@ -1,20 +1,20 @@
 # design-refs
 
-**Who reads:** design. **Who does not:** eng/qa/analyst (they consume FEATURE.design + pack).
+**Кто читает:** design. **Кто не читает:** eng/qa/analyst (они потребляют FEATURE.design + pack).
 
 ## Must
 
-- SoR inputs = `refs_index` paths only; no chat-image scrape.
-- Each screen in `_index.md` has one `primary_ref`; conflicts → DECISIONS.md; do not average silently.
-- Emit eng-facing pack: TOKENS, SCREENS, COMPONENTS, DECISIONS — sizes, colors, type, space, layout zones, states.
-- Pass only if [../verify.md](../verify.md) DoD holds.
-- Write FEATURE.design.pack / screens; open_questions for gaps — no brand invention beyond refs.
-- `needs_input` if index/refs missing when design hop required.
+- SoR inputs = только пути `refs_index`; без scrape chat-image.
+- У каждого screen в `_index.md` один `primary_ref`; conflicts → DECISIONS.md; не усредняй молча.
+- Выдай eng-facing pack: TOKENS, SCREENS, COMPONENTS, DECISIONS — sizes, colors, type, space, layout zones, states.
+- Pass только если выполняется DoD из [../verify.md](../verify.md).
+- Запиши FEATURE.design.pack / screens; open_questions по gaps — без brand invention сверх refs.
+- `needs_input`, если index/refs отсутствуют, когда design hop обязателен.
 
 ## Should
 
-- Note fidelity limits (crop, watermark ignore) in DECISIONS.md / index `ignore`.
+- Отмечай fidelity limits (crop, watermark ignore) в DECISIONS.md / index `ignore`.
 
 ## Forbidden
 
-- Product code; editing plan.md; shipping this file via OUTBOX; reading foreign conventions; weakening DoD to force green.
+- Product code; правка plan.md; передача этого файла через OUTBOX; чтение чужих conventions; ослабление DoD ради зелёного статуса.

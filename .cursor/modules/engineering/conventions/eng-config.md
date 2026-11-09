@@ -1,16 +1,16 @@
 # eng-config
 
-**Who reads:** engineering.
+**Кто читает:** engineering.
 
 ## Must
 
-- No secrets in committed config; placeholders only.
-- Prod secrets from env/secret store — never FEATURE/chat.
-- Safe local defaults; fail fast on missing required settings.
+- Без secrets в committed config; только placeholders.
+- Prod secrets из env/secret store — никогда из FEATURE/chat.
+- Безопасные local defaults; fail fast при отсутствии required settings.
 
 ## Should
 
-- Explicit config over hidden globals.
+- Явный config вместо скрытых globals.
 
 ## Forbidden
 

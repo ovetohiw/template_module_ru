@@ -1,14 +1,14 @@
-# Layers (abstract slots)
+# Layers (абстрактные слоты)
 
-| Layer id | Purpose | Bound module (see ROUTING) | work_package? |
-|----------|---------|----------------------------|---------------|
-| requirements | Normalize brief; FEATURE; work_packages | analyst (`spec`) | no (stage hop) |
-| design | Visual SoR from refs → design pack | design | no (stage hop) |
+| Layer id | Назначение | Привязанный модуль (см. ROUTING) | work_package? |
+|----------|------------|----------------------------------|---------------|
+| requirements | Нормализовать бриф; FEATURE; work_packages | analyst (`spec`) | no (stage hop) |
+| design | Visual SoR из refs → design pack | design | no (stage hop) |
 | security | Threat/constraints must/should | security | yes |
-| implementation | Build against packages | engineering | yes |
-| verification | Independent evidence / findings | qa | yes |
-| acceptance | Gate close vs FEATURE + evidence | analyst (`accept`) | no (stage hop) |
+| implementation | Сборка по пакетам | engineering | yes |
+| verification | Независимые evidence / findings | qa | yes |
+| acceptance | Гейт закрытия vs FEATURE + evidence | analyst (`accept`) | no (stage hop) |
 
-Modules plan against **layer ids**, never against module folder names.
+Модули планируют по **layer ids**, никогда по именам папок модулей.
 
-`design` is a **lifecycle stage + envelope layer**, not a `work_package.layer`. See LIFECYCLE stage-vs-package table.
+`design` — это **lifecycle stage + envelope layer**, не `work_package.layer`. См. таблицу stage-vs-package в LIFECYCLE.

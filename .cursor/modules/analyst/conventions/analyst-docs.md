@@ -1,20 +1,20 @@
 # analyst-docs
 
-**Who reads:** analyst. **Who does not:** other modules.
+**Кто читает:** analyst. **Кто не читает:** другие модули.
 
 ## Must
 
-- Scenarios under `cases/current/behavior/`; FEATURE keeps short contract + Behavior paths.
-- Include `surfaces: []` (web|desktop|bots) on FEATURE; keep in sync with CASE.
-- Leave Security must/should stubs for security hop to fill.
-- When web|desktop: stub FEATURE.design (+ design_skip / reason per uidesign policy); do not synthesize visual pack.
-- Observable acceptance only; hard to human if behavior unknown.
-- Accept: sync behavior or `unchanged` + reason.
+- Сценарии в `cases/current/behavior/`; FEATURE держит короткий contract + Behavior paths.
+- Включай `surfaces: []` (web|desktop|bots) в FEATURE; синхронизируй с CASE.
+- Оставляй Security must/should stubs для заполнения на security hop.
+- При web|desktop: stub FEATURE.design (+ design_skip / reason по политике uidesign); не синтезируй visual pack.
+- Только observable acceptance; hard к человеку, если behavior неизвестен.
+- Accept: синхронизируй behavior или `unchanged` + reason.
 
 ## Should
 
-- One scenario file per user-visible path.
+- Один scenario file на каждый user-visible path.
 
 ## Forbidden
 
-- Product code; secrets/PII in docs; process/DoD inside behavior files; foreign conventions.
+- Product code; secrets/PII в docs; process/DoD внутри behavior files; чужие conventions.

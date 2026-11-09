@@ -1,6 +1,6 @@
 # qa verify
 
-- Evidence rows for each assigned acceptance item
-- Findings have id, severity, summary, artifact
-- No pass on code-read alone when OUTBOX requires a run
-- Commands from stack.md or OUTBOX; optional MCP tools only per shared/mcp-tools.md
+- Evidence rows на каждый assigned acceptance item
+- Findings имеют id, severity, summary, artifact
+- Нет pass только по code-read, когда OUTBOX требует run
+- Команды из stack.md или OUTBOX; optional MCP tools только по shared/mcp-tools.md

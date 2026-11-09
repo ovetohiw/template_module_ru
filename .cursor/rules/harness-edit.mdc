@@ -1,5 +1,5 @@
 ---
-description: Rules when editing the harness template structure under .cursor or root AGENTS.md
+description: Правила при правке структуры шаблона harness под .cursor или корневого AGENTS.md
 alwaysApply: false
 globs:
   - AGENTS.md
@@ -17,27 +17,27 @@ globs:
 
 # Harness edit mode
 
-Before changing harness structure, read `.cursor/shared/harness-principles.md`.
+Перед изменением структуры harness прочитай `.cursor/shared/harness-principles.md`.
 
 ## Soft
 
-- Clarify one module process; fix links/payloads; golden examples; INDEX sync.
-- Add/edit **role-prefixed** conventions in the **owning** module (`eng-*`/`qa-*`/`sec-*`/`analyst-*`/`design-*`) + INDEX line; keep eng/sec/qa/design angles distinct.
-- Tighten wording without meaning change.
-- Add MCP server declaration without secrets + matching line in `shared/mcp-tools.md`.
+- Уточнить process одного модуля; починить ссылки/payloads; golden-примеры; синхронизация INDEX.
+- Добавить/править conventions с **ролевым префиксом** в **owning**-модуле (`eng-*`/`qa-*`/`sec-*`/`analyst-*`/`design-*`) + строка INDEX; держи углы eng/sec/qa/design разными.
+- Ужесточить формулировки без смены смысла.
+- Добавить объявление MCP-сервера без секретов + соответствующую строку в `shared/mcp-tools.md`.
 
 ## Hard (ask human)
 
-- Add/remove/rename module; FSM/layers change; process outside `.cursor/`; fat root AGENTS.
-- Peer-handoff; weaken evidence/self-close; alwaysApply loading all modules; duplicate canon into skills; second status SoR.
-- Conventions in `shared/`/overlays/root; universal “for all roles”; unprefixed names that collide; leave old unprefixed beside new.
-- Copy/fork across roles (`eng-test`↔`qa-test`, `eng-web`↔`sec-web`, …).
-- Convention/constraints relay via OUTBOX; cross-read foreign conventions.
-- Surfaces outside web/desktop/bots without human hard; empty convention stubs; alwaysApply on conventions.
-- Secrets in `mcp.json`; unpinned `@latest` as default MCP package; always-on dangerous eval/XSS MCP; require MCP for bots/desktop without human; MCP policy/config inside `modules/*/conventions`.
+- Добавить/удалить/переименовать модуль; смена FSM/layers; process вне `.cursor/`; толстый корневой AGENTS.
+- Peer-handoff; ослабить evidence/self-close; alwaysApply, загружающий все модули; дублировать канон в skills; второй status SoR.
+- Conventions в `shared/`/overlays/root; универсальные «для всех ролей»; имена без префикса с коллизиями; оставлять старые без префикса рядом с новыми.
+- Копировать/форкать между ролями (`eng-test`↔`qa-test`, `eng-web`↔`sec-web`, …).
+- Relay conventions/constraints через OUTBOX; кросс-чтение чужих conventions.
+- Surfaces вне web/desktop/bots без human hard; пустые заглушки conventions; alwaysApply на conventions.
+- Секреты в `mcp.json`; незафиксированный `@latest` как MCP-пакет по умолчанию; always-on опасный eval/XSS MCP; требовать MCP для bots/desktop без human; политика/конфиг MCP внутри `modules/*/conventions`.
 
 ## End checklist
 
-- Principles read; placement ok; root thin; INDEX updated.
-- Prefixed names; who reads/does not; process→conventions/INDEX; `surfaces[]` gate documented.
-- eng≠qa≠sec≠design angles; no stale unprefixed paths; size budget; changelog entry.
+- Principles прочитаны; placement ок; root thin; INDEX обновлён.
+- Префиксированные имена; кто читает/не читает; process→conventions/INDEX; gate `surfaces[]` задокументирован.
+- Углы eng≠qa≠sec≠design; нет устаревших путей без префикса; бюджет размера; запись в changelog.

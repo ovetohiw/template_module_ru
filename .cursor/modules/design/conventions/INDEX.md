@@ -1,12 +1,12 @@
 # Design conventions
 
-**Who reads:** design only. Output → design pack + FEATURE.design + INBOX (not convention files).
+**Кто читает:** только design. Output → design pack + FEATURE.design + INBOX (не convention files).
 
 ## Core
 
 | File | When |
 |------|------|
-| [design-refs.md](design-refs.md) | Every design synthesize |
+| [design-refs.md](design-refs.md) | Каждый design synthesize |
 
 ## Surface (only if id ∈ CASE/FEATURE `surfaces[]`)
 
@@ -15,4 +15,4 @@
 | [design-web.md](design-web.md) | web |
 | [design-desktop.md](design-desktop.md) | desktop |
 
-Empty `surfaces` / bots-only without GUI design hop → module should not run (`design_status=not_applicable`).
+Пустой `surfaces` / bots-only без GUI design hop → модуль не должен запускаться (`design_status=not_applicable`).

@@ -1,12 +1,12 @@
 # QA conventions
 
-**Who reads:** qa only. Brief = verification package + case artifacts — never raw intake alone.
+**Кто читает:** только qa. Brief = verification package + case artifacts — никогда только raw intake.
 
 ## Core
 
 | File | When |
 |------|------|
-| [qa-test.md](qa-test.md) | Every verification package |
+| [qa-test.md](qa-test.md) | Каждый verification package |
 
 ## Surface (only if id ∈ CASE/FEATURE `surfaces[]`)
 
@@ -16,4 +16,4 @@
 | [qa-desktop.md](qa-desktop.md) | desktop |
 | [qa-bots.md](qa-bots.md) | bots |
 
-Empty `surfaces` → core only. Never read eng/security conventions.
+Пустой `surfaces` → только core. Никогда не читай eng/security conventions.

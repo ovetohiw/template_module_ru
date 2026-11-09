@@ -1,18 +1,18 @@
 # eng-network
 
-**Who reads:** engineering when package touches network I/O.
+**Кто читает:** engineering, когда package затрагивает network I/O.
 
 ## Must
 
-- Explicit timeouts on outbound calls; bounded retries with backoff; no infinite retry.
-- Validate/sanitize data crossing trust boundaries.
-- TLS for external sensitive traffic unless FEATURE waives with risk note.
-- Do not log Authorization headers, tokens, or full secrets.
+- Явные timeouts на outbound calls; bounded retries с backoff; без infinite retry.
+- Validate/sanitize данных на границах trust.
+- TLS для внешнего sensitive traffic, если FEATURE не waives с risk note.
+- Не логируй Authorization headers, tokens или полные secrets.
 
 ## Should
 
-- Idempotent clients for retried mutating calls where feasible.
+- Idempotent clients для retried mutating calls, где возможно.
 
 ## Forbidden
 
-- Swallowing network errors as success; trusting peer without auth when required.
+- Глотать network errors как success; доверять peer без auth, когда auth обязателен.

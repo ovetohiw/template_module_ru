@@ -1,19 +1,19 @@
 # sec-web
 
-**Who reads:** security when `web` ∈ surfaces. Review angle only.
+**Кто читает:** security, когда `web` ∈ surfaces. Только угол review.
 
 ## Must
 
-- Require server authz on every sensitive HTTP action; flag IDOR risk (object id from client).
-- Cookie sessions: httpOnly; Secure in prod; document SameSite decision.
-- Reject `Access-Control-Allow-Origin: *` with credentials.
-- Errors must not leak stack traces, tokens, or internal paths to clients.
-- State-changing browser flows need CSRF defense or equivalent when cookie auth.
+- Требуй server authz на каждое sensitive HTTP action; помечай IDOR risk (object id от client).
+- Cookie sessions: httpOnly; Secure в prod; документируй SameSite decision.
+- Отклоняй `Access-Control-Allow-Origin: *` с credentials.
+- Errors не должны утекать stack traces, tokens или internal paths клиентам.
+- State-changing browser flows нуждаются в CSRF defense или эквиваленте при cookie auth.
 
 ## Should
 
-- Rate-limit auth endpoints called out in must/should when brute-force relevant.
+- Rate-limit auth endpoints укажи в must/should, когда brute-force релевантен.
 
 ## Forbidden
 
-- Copying eng-web/qa-web text as this file’s canon; framework-specific dogma as must.
+- Копирование текста eng-web/qa-web как canon этого файла; framework-specific dogma как must.

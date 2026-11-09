@@ -1,18 +1,18 @@
 # eng-db
 
-**Who reads:** engineering when package touches DB.
+**Кто читает:** engineering, когда package затрагивает DB.
 
 ## Must
 
-- Parameterized queries only — no string-concat SQL with user input.
-- Migrations reversible or explicitly one-way with recorded risk.
-- No production data in dev/test DBs by default.
-- AuthZ and tenancy enforced in data access, not only UI.
+- Только parameterized queries — без string-concat SQL с user input.
+- Migrations обратимы или явно one-way с зафиксированным risk.
+- Без production data в dev/test DBs по умолчанию.
+- AuthZ и tenancy enforced в data access, а не только в UI.
 
 ## Should
 
-- Transactions around multi-step writes that must be atomic.
+- Transactions вокруг multi-step writes, которые должны быть atomic.
 
 ## Forbidden
 
-- Trusting client-supplied row ids without ownership checks.
+- Доверять client-supplied row ids без ownership checks.

@@ -1,6 +1,6 @@
 # Engineering exec-plans
 
-Local stage breakdown for large implementation packages.
+Локальная разбивка на stages для крупных implementation packages.
 
-Autonomy C: after green stage DoD, next **stage** in the same run is allowed.  
-Never start security/qa/accept in this module.
+Autonomy C: после зелёного stage DoD разрешён следующий **stage** в том же run.  
+Никогда не запускай security/qa/accept в этом модуле.

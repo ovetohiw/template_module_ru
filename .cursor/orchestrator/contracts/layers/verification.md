@@ -9,15 +9,15 @@ evidence_rows: []            # evidence-schema.md
 
 ## findings[].rework_target
 
-On fail rows / findings, set:
+На fail-строках / findings задай:
 
 ```text
 rework_target: implementation | design | requirements
 ```
 
-Rules:
+Правила:
 
-- visual mismatch with valid design pack → `implementation`
-- pack contradicts refs / token gaps → `design`
-- behavior acceptance wrong → `requirements`
-- field missing → orchestrator defaults to `implementation`
+- визуальное расхождение при валидном design pack → `implementation`
+- pack противоречит refs / пробелы в токенах → `design`
+- неверные behavior acceptance → `requirements`
+- поле отсутствует → оркестратор по умолчанию ставит `implementation`

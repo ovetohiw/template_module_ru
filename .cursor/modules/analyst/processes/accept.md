@@ -2,16 +2,16 @@
 
 ## Do
 
-1. Read [../conventions/INDEX.md](../conventions/INDEX.md) → analyst-docs.
-2. Read FEATURE, evidence, handoffs, verification findings.
-3. Check each acceptance criterion against evidence rows.
-4. Record gates; fail if summary-only or missing qa-owned evidence where required.
-5. Sync behavior or `unchanged[]` + reason.
+1. Прочитай [../conventions/INDEX.md](../conventions/INDEX.md) → analyst-docs.
+2. Прочитай FEATURE, evidence, handoffs, verification findings.
+3. Проверь каждый acceptance criterion по evidence rows.
+4. Зафиксируй gates; fail, если только summary или нет обязательных qa-owned evidence.
+5. Синхронизируй behavior или `unchanged[]` + reason.
 
 ## Do not
 
-- Code fixes; self-close without evidence; weaken criteria.
+- Правки кода; самозакрытие без evidence; ослабление criteria.
 
 ## Out
 
-INBOX `pass` → may close; `fail` → orchestrator rework.
+INBOX `pass` → можно закрыть; `fail` → orchestrator rework.

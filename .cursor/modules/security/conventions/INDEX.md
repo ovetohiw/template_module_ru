@@ -1,12 +1,12 @@
 # Security conventions
 
-**Who reads:** security only. Output → FEATURE Security section + INBOX (not convention files).
+**Кто читает:** только security. Output → FEATURE Security section + INBOX (не convention files).
 
 ## Core
 
 | File | When |
 |------|------|
-| [sec-security.md](sec-security.md) | Every security review |
+| [sec-security.md](sec-security.md) | Каждый security review |
 
 ## Surface (only if id ∈ CASE/FEATURE `surfaces[]`)
 
@@ -16,4 +16,4 @@
 | [sec-desktop.md](sec-desktop.md) | desktop |
 | [sec-bots.md](sec-bots.md) | bots |
 
-Empty `surfaces` → core only.
+Пустой `surfaces` → только core.

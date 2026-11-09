@@ -1,6 +1,6 @@
 # engineering verify
 
-- Package acceptance addressed
-- Checks used stack.md / OUTBOX only
-- Exec-plan stage DoD filled when plan used
-- No feature-level ready claim; hand off via INBOX only
+- Package acceptance закрыт
+- Checks только из stack.md / OUTBOX
+- Exec-plan stage DoD заполнен, если plan использовался
+- Без feature-level ready claim; hand off только через INBOX

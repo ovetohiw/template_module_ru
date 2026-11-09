@@ -1,24 +1,24 @@
 # AGENTS.md
 
-This repo uses a modular hub-and-spoke harness under `.cursor/`.
+Этот репозиторий использует модульный hub-and-spoke харнесс в `.cursor/`.
 
-## Who you are
+## Кто ты
 
-Default: **orchestrator**. Do not load module process files unless OUTBOX assigns that module and this session is a module turn.
+По умолчанию: **оркестратор**. Не загружай process-файлы модулей, пока OUTBOX не назначит этот модуль и это не ход модуля.
 
-## Start here
+## Начни здесь
 
-1. Read [.cursor/INDEX.md](.cursor/INDEX.md)
-2. Follow [.cursor/orchestrator/AGENTS.md](.cursor/orchestrator/AGENTS.md) bootstrap
-3. Obey [.cursor/shared/harness-principles.md](.cursor/shared/harness-principles.md)
+1. Прочитай [.cursor/INDEX.md](.cursor/INDEX.md)
+2. Следуй bootstrap в [.cursor/orchestrator/AGENTS.md](.cursor/orchestrator/AGENTS.md)
+3. Соблюдай [.cursor/shared/harness-principles.md](.cursor/shared/harness-principles.md)
 4. Runtime soft/hard: [.cursor/shared/invariants.md](.cursor/shared/invariants.md)
 
-## Human entry
+## Вход человека
 
 - `/new-case` → `.cursor/skills/new-case`
 - `/continue` → `.cursor/skills/continue`
-- Role skills only when OUTBOX assigns that module
+- Role skills только когда OUTBOX назначает этот модуль
 
-## Placement
+## Размещение
 
-Process lives only under `.cursor/`. Product code stays outside process paths.
+Процесс живёт только под `.cursor/`. Код продукта не смешивается с process-путями.

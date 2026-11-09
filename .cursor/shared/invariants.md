@@ -1,25 +1,25 @@
-# Runtime invariants (case execution)
+# Runtime invariants (исполнение кейса)
 
-## Soft (decide and continue)
+## Soft (реши и продолжай)
 
-- Implementation choice inside FEATURE + stack slots
-- Clarify from assigned artifact paths in OUTBOX
-- Narrow fix required to close current package DoD without expanding case scope
+- Выбор реализации внутри FEATURE + слотов stack
+- Уточнение из назначенных путей артефактов в OUTBOX
+- Узкий фикс, нужный чтобы закрыть DoD текущего пакета, без расширения scope кейса
 
-## Hard (stop; blocker in orchestrator PROGRESS)
+## Hard (стоп; blocker в orchestrator PROGRESS)
 
-- Guess role / next module from chat instead of CASE+OUTBOX
-- Read foreign module processes
-- Write `to_role` / peer handoff
-- Advance lifecycle on incomplete envelope
-- Mark done without evidence rows
-- Self-close: same session finishes build verify and accept
-- Invent verify runners not listed in `stack.md` (MCP tool use per `shared/mcp-tools.md` is not an invented runner; invented = arbitrary CLI outside stack/OUTBOX)
-- Start neighbor role after module DoD in the same turn
-- Parallel OUTBOX (v1 is serial only)
-- Change harness structure during case execution
-- Invent `design_skip` from chat; run plan_review while `design_status=pending`; eng freestyle UI when `design_status=done` (must follow pack)
+- Угадывать роль / следующий модуль из чата вместо CASE+OUTBOX
+- Читать чужие process модулей
+- Писать `to_role` / peer handoff
+- Продвигать lifecycle по неполному envelope
+- Помечать done без строк evidence
+- Self-close: та же сессия закрывает build verify и accept
+- Invent verify runners, не перечисленных в `stack.md` (использование MCP-инструментов по `shared/mcp-tools.md` — не invented runner; invented = произвольный CLI вне stack/OUTBOX)
+- Стартовать соседнюю роль после DoD модуля в том же ходе
+- Параллельный OUTBOX (v1 только serial)
+- Менять структуру харнесса во время исполнения кейса
+- Invent `design_skip` из чата; запускать plan_review при `design_status=pending`; eng freestyle UI когда `design_status=done` (обязан следовать pack)
 
 ## Evidence
 
-Done requires schema in `evidence-schema.md`. Empty or one-word proof is invalid.
+Done требует schema в `evidence-schema.md`. Пустое или однословное доказательство невалидно.

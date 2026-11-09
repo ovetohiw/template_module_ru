@@ -1,11 +1,11 @@
 ---
 name: role-security
 description: >-
-  Runs security module when OUTBOX assigns security.
+  Запускает модуль security, когда OUTBOX назначает security.
 ---
 
 # role-security
 
-1. Require OUTBOX `assigned_module=security` pending; else hard.
-2. Follow `.cursor/modules/security/AGENTS.md`.
-3. Write INBOX; OUTBOX done; stop. No routing.
+1. Требуй OUTBOX `assigned_module=security` pending; иначе hard.
+2. Следуй `.cursor/modules/security/AGENTS.md`.
+3. Запиши INBOX; OUTBOX done; стоп. Без routing.

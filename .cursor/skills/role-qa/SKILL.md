@@ -1,12 +1,12 @@
 ---
 name: role-qa
 description: >-
-  Runs qa module when OUTBOX assigns qa. Never treat raw intake as the brief.
+  Запускает модуль qa, когда OUTBOX назначает qa. Никогда не считай сырой intake брифом.
 ---
 
 # role-qa
 
-1. Require OUTBOX `assigned_module=qa` pending; else hard.
-2. Reject if brief is only raw intake without verification package.
-3. Follow `.cursor/modules/qa/AGENTS.md`.
-4. Write INBOX; OUTBOX done; stop. No routing.
+1. Требуй OUTBOX `assigned_module=qa` pending; иначе hard.
+2. Откажи, если brief — только сырой intake без verification package.
+3. Следуй `.cursor/modules/qa/AGENTS.md`.
+4. Запиши INBOX; OUTBOX done; стоп. Без routing.

@@ -2,10 +2,10 @@
 
 ## Start
 
-1. OUTBOX must assign `design`.
-2. Read shared invariants.
-3. Read [conventions/INDEX.md](conventions/INDEX.md): always [design-refs.md](conventions/design-refs.md); add design-web|desktop only if id ∈ CASE/FEATURE `surfaces[]`.
-4. Run [processes/synthesize.md](processes/synthesize.md).
-5. Write INBOX; update FEATURE.design; update PROGRESS; **stop**.
+1. OUTBOX должен назначать `design`.
+2. Прочитай shared invariants.
+3. Прочитай [conventions/INDEX.md](conventions/INDEX.md): всегда [design-refs.md](conventions/design-refs.md); добавляй design-web|desktop только если id ∈ CASE/FEATURE `surfaces[]`.
+4. Выполни [processes/synthesize.md](processes/synthesize.md).
+5. Запиши INBOX; обнови FEATURE.design; обнови PROGRESS; **stop**.
 
-Never ship convention files via OUTBOX. Never read foreign conventions. Never edit `plan.md` / work_packages. Never write product code.
+Никогда не передавай convention files через OUTBOX. Никогда не читай чужие conventions. Никогда не редактируй `plan.md` / work_packages. Никогда не пиши product code.

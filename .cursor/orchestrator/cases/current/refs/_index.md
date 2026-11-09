@@ -1,15 +1,15 @@
-# refs index (template)
+# refs index (шаблон)
 
-Map each screen to primary ref. Design module reads this file only (plus listed paths).
+Сопоставить каждый экран с primary ref. Модуль design читает только этот файл (плюс перечисленные пути).
 
 ```text
 # screen_id:
-#   primary_ref: <relative path under refs/>
-#   states: []          # optional extra files (error, empty, …)
+#   primary_ref: <относительный путь под refs/>
+#   states: []          # опциональные доп. файлы (error, empty, …)
 #   priority: primary   # primary | secondary
 #   ignore: []          # watermarks, browser chrome, …
 ```
 
 ## Screens
 
-(none — human fills before design hop when visual fidelity required)
+(нет — человек заполняет до design hop, когда нужна визуальная fidelity)

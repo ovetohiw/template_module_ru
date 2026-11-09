@@ -1,22 +1,22 @@
 # qa-test
 
-**Who reads:** qa (independent verify). **Who does not:** engineering (eng-test).
+**Кто читает:** qa (независимое verify). **Кто не читает:** engineering (eng-test).
 
 ## Must
 
-- Verify FEATURE acceptance + behavior independently; evidence rows per `shared/evidence-schema.md` (`role=qa`).
-- Runners only from `shared/stack.md` or OUTBOX; empty slots → explicit note, no invented runner.
-- Optional MCP evidence tools only per `shared/mcp-tools.md` (not a runner-slot; not a `stack.md` replacement). No MCP ≠ skip verify — fall back to stack/manual; do not invent success. Note source in `command_or_action` (`mcp:…` / `stack:…` / `manual`).
-- Prefer behavioral/e2e checks for critical paths; do not accept unit-on-mocks as sole proof of user path.
-- Failures → findings[] (id, severity); verdict `fail` — do not assign eng yourself.
-- Code-read alone ≠ pass when OUTBOX requires a run.
-- No secrets/PII in evidence artifacts.
+- Verify FEATURE acceptance + behavior независимо; evidence rows по `shared/evidence-schema.md` (`role=qa`).
+- Runners только из `shared/stack.md` или OUTBOX; пустые слоты → явная note, без изобретённого runner.
+- Optional MCP evidence tools только по `shared/mcp-tools.md` (не runner-slot; не замена `stack.md`). Нет MCP ≠ skip verify — fallback на stack/manual; не изобретай success. Укажи source в `command_or_action` (`mcp:…` / `stack:…` / `manual`).
+- Предпочитай behavioral/e2e checks для critical paths; не принимай unit-on-mocks как единственное proof user path.
+- Failures → findings[] (id, severity); verdict `fail` — не назначай eng сам.
+- Один code-read ≠ pass, когда OUTBOX требует run.
+- Без secrets/PII в evidence artifacts.
 
 ## Should
 
-- Trace to behavior files; one clear failure reason per finding.
-- Where multi-user resources exist, attempt cross-user access (IDOR pattern).
+- Трассируй к behavior files; одна ясная причина failure на finding.
+- Где есть multi-user resources, пытайся cross-user access (IDOR pattern).
 
 ## Forbidden
 
-- Raw intake as brief; summary-only pass; weakening asserts; foreign conventions; closing accept/case from qa.
+- Raw intake как brief; pass только по summary; ослабление asserts; чужие conventions; закрытие accept/case из qa.

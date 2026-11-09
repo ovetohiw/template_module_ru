@@ -2,10 +2,10 @@
 
 ## Start
 
-1. OUTBOX must assign `security`.
-2. Read shared invariants.
-3. Read [conventions/INDEX.md](conventions/INDEX.md): always [sec-security.md](conventions/sec-security.md); add sec-web|desktop|bots only if id ∈ CASE/FEATURE `surfaces[]`.
-4. Run [processes/review.md](processes/review.md).
-5. Write INBOX; update FEATURE Security section; update PROGRESS; **stop**.
+1. OUTBOX должен назначать `security`.
+2. Прочитай shared invariants.
+3. Прочитай [conventions/INDEX.md](conventions/INDEX.md): всегда [sec-security.md](conventions/sec-security.md); добавляй sec-web|desktop|bots только если id ∈ CASE/FEATURE `surfaces[]`.
+4. Выполни [processes/review.md](processes/review.md).
+5. Запиши INBOX; обнови FEATURE Security section; обнови PROGRESS; **stop**.
 
-Never ship convention files via OUTBOX. Never read foreign conventions.
+Никогда не передавай convention files через OUTBOX. Никогда не читай чужие conventions.

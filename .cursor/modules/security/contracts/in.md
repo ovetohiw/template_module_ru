@@ -1,3 +1,3 @@
 # security IN
 
-Expect OUTBOX: `assigned_module=security`, `layer=security`, package brief, artifacts_in.
+Ожидай OUTBOX: `assigned_module=security`, `layer=security`, package brief, artifacts_in.

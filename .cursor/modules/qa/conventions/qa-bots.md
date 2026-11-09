@@ -1,18 +1,18 @@
 # qa-bots
 
-**Who reads:** qa when `bots` ∈ surfaces. Verify angle.
+**Кто читает:** qa, когда `bots` ∈ surfaces. Угол verify.
 
 ## Must
 
-- Reject requests without valid inbound secret (or document blocked environment).
-- Replay/duplicate update does not double side effect (idempotency).
-- Unauthorized callback/user cannot perform privileged action.
-- No bot token appears in logs/evidence captured for the run.
+- Отклоняй requests без valid inbound secret (или документируй blocked environment).
+- Replay/duplicate update не даёт double side effect (idempotency).
+- Unauthorized callback/user не может выполнить privileged action.
+- Bot token не появляется в logs/evidence, захваченных для run.
 
 ## Should
 
-- Abuse: rapid repeated commands rate-limited when in FEATURE.
+- Abuse: rapid repeated commands rate-limited, когда это в FEATURE.
 
 ## Forbidden
 
-- Trusting platform delivery alone without secret check when webhook mode is in scope.
+- Доверять только platform delivery без secret check, когда webhook mode в scope.

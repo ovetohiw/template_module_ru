@@ -1,8 +1,8 @@
-# SCREENS (template)
+# SCREENS (шаблон)
 
-One section per `screen_id` from refs/_index.md.
+Одна секция на каждый `screen_id` из refs/_index.md.
 
-## screen_id (example)
+## screen_id (пример)
 
 - primary_ref:
 - viewport:

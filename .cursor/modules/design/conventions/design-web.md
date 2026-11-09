@@ -1,17 +1,17 @@
 # design-web
 
-**Who reads:** design when `web` ∈ surfaces.
+**Кто читает:** design, когда `web` ∈ surfaces.
 
 ## Must
 
-- State target viewport(s) per screen (e.g. desktop width; mobile if ref present).
-- Note scroll vs fixed regions when visible in ref.
-- Form / nav / content zones explicit in SCREENS.md.
+- Укажи target viewport(s) на каждый screen (например desktop width; mobile, если есть ref).
+- Отмечай scroll vs fixed regions, когда это видно в ref.
+- Form / nav / content zones явно в SCREENS.md.
 
 ## Should
 
-- Call out responsive unknowns as open_questions when only one breakpoint ref exists.
+- Выноси responsive unknowns в open_questions, когда есть ref только для одного breakpoint.
 
 ## Forbidden
 
-- Inventing breakpoints or components not implied by refs; copying eng-web/qa-web as this file.
+- Изобретать breakpoints или components, не подразумеваемые refs; копировать eng-web/qa-web как этот файл.

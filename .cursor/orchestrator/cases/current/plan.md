@@ -6,33 +6,33 @@ case_id: golden-web-001
 
 ### wp-sec-1
 - layer: security
-- goal: Define must/should for auth credentials, session, and DB secrets
+- goal: Определить must/should для auth-учётных данных, сессии и секретов БД
 - depends_on: []
 - acceptance:
-  - must[] covers password storage, session cookie, secret handling
+  - must[] покрывает хранение паролей, session cookie, работу с секретами
 - artifacts_expected:
-  - security notes in INBOX payload
+  - security notes в payload INBOX
 - constraints:
-  - no plaintext passwords
+  - без plaintext-паролей
 
 ### wp-impl-1
 - layer: implementation
-- goal: Implement DB-backed auth + protected UI shell per FEATURE
+- goal: Реализовать auth на БД + защищённую оболочку UI по FEATURE
 - depends_on: [wp-sec-1]
 - acceptance:
-  - A1–A4 behaviors exist in app
+  - поведения A1–A4 существуют в приложении
 - artifacts_expected:
-  - code paths listed in implementation payload
+  - пути кода, перечисленные в payload implementation
 - constraints:
-  - respect security must[]
+  - соблюдать security must[]
 
 ### wp-ver-1
 - layer: verification
-- goal: Independently verify A1–A4 with evidence rows
+- goal: Независимо проверить A1–A4 со строками evidence
 - depends_on: [wp-impl-1]
 - acceptance:
-  - evidence rows for A1–A4; findings if fail
+  - строки evidence для A1–A4; findings при fail
 - artifacts_expected:
-  - cases/current/evidence.md updates
+  - обновления cases/current/evidence.md
 - constraints:
-  - do not use raw intake as sole brief
+  - не использовать сырой intake как единственный brief

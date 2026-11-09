@@ -2,13 +2,13 @@
 
 ## Spec DoD
 
-- FEATURE filled (goal, scope, acceptance)
-- behavior files under cases/current/behavior/
-- work_packages valid per work_package.md
-- open_questions listed (hard if blocking unknowns guessed)
+- FEATURE заполнен (goal, scope, acceptance)
+- behavior-файлы в cases/current/behavior/
+- work_packages валидны по work_package.md
+- open_questions перечислены (hard, если блокирующие неизвестные угаданы)
 
 ## Accept DoD
 
-- Every acceptance criterion checked against evidence rows
-- Gates recorded; no summary-only pass
-- docs_updated or unchanged+reason
+- Каждый acceptance criterion проверен по evidence rows
+- Gates зафиксированы; pass только по summary запрещён
+- docs_updated или unchanged+reason

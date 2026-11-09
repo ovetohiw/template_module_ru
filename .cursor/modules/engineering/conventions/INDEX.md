@@ -1,14 +1,14 @@
 # Engineering conventions
 
-**Who reads:** engineering only.
+**Кто читает:** только engineering.
 
 ## Core (always)
 
 | File | When |
 |------|------|
-| [eng-development.md](eng-development.md) | Any code change |
-| [eng-test.md](eng-test.md) | Writing/running tests at build |
-| [eng-tooling.md](eng-tooling.md) | Invoking build/test commands |
+| [eng-development.md](eng-development.md) | Любое изменение кода |
+| [eng-test.md](eng-test.md) | Написание/запуск tests на build |
+| [eng-tooling.md](eng-tooling.md) | Вызов команд build/test |
 | [eng-config.md](eng-config.md) | Config/env/defaults |
 
 ## Domain (open only if package touches)
@@ -31,6 +31,6 @@
 
 | File | When |
 |------|------|
-| [eng-ui.md](eng-ui.md) | design pack SoR — do **not** load when skipped/not_applicable |
+| [eng-ui.md](eng-ui.md) | design pack SoR — **не** загружай при skipped/not_applicable |
 
-Also honor FEATURE (Security must) + package acceptance + design pack paths when done. Never read foreign conventions. Runners → `shared/stack.md`.
+Также соблюдай FEATURE (Security must) + package acceptance + пути design pack при done. Никогда не читай чужие conventions. Runners → `shared/stack.md`.

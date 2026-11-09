@@ -1,7 +1,7 @@
-# FEATURE (active case)
+# FEATURE (активный кейс)
 
 - ID: golden-web-001
-- Title: Simple site with DB, auth, UI
+- Title: Простой сайт с БД, авторизацией и UI
 - Status: in_progress
 - surfaces: [web]
 - design_skip: true
@@ -10,27 +10,27 @@
   refs_index: cases/current/refs/_index.md
   pack: cases/current/design/
   screens: []
-- Goal: Users can register/login and see a basic authenticated UI backed by a database.
+- Goal: Пользователи могут зарегистрироваться/войти и видеть базовый authenticated UI на базе базы данных.
 - Scope in:
-  - Web UI shell
-  - User auth (register/login/logout)
-  - Persistent user store in DB
+  - Оболочка Web UI
+  - Auth пользователя (register/login/logout)
+  - Постоянное хранилище пользователей в БД
 - Scope out:
-  - Payments, OAuth social login, admin CMS, multi-tenant
+  - Платежи, OAuth social login, admin CMS, multi-tenant
 - Acceptance:
-  - [x] A1: Visitor can register with email+password and land in authenticated state
-  - [x] A2: Registered user can log in again after session end
-  - [x] A3: Authenticated UI shows a protected home view; anonymous user is redirected to login
-  - [x] A4: User records persist in the configured database across restart
-- Status note: golden demo closed with simulated product evidence (harness protocol real)
+  - [x] A1: Посетитель может зарегистрироваться с email+password и попасть в authenticated state
+  - [x] A2: Зарегистрированный пользователь может снова войти после окончания сессии
+  - [x] A3: Authenticated UI показывает защищённый home view; анонимный пользователь перенаправляется на login
+  - [x] A4: Записи пользователей сохраняются в настроенной базе данных после перезапуска
+- Status note: золотое демо закрыто с симулированными продуктовыми evidence (протокол harness реальный)
 - Behavior paths:
   - cases/current/behavior/reg-login.md
   - cases/current/behavior/protected-home.md
-- Security must:   # filled by security module into case SoR (not via convention relay)
-  - [x] M1: Passwords stored as strong hashes; no plaintext in DB/repo
-  - [x] M2: Session cookie httpOnly (or equivalent safe session storage decision recorded)
-  - [x] M3: AuthZ on server; UI hide ≠ authorization
-  - [x] M4: No secrets/tokens in repo, FEATURE, or evidence artifacts
+- Security must:   # заполняет security-модуль в case SoR (не через ретрансляцию conventions)
+  - [x] M1: Пароли хранятся как сильные хеши; без plaintext в БД/репозитории
+  - [x] M2: Session cookie httpOnly (или эквивалентное безопасное решение по хранению сессии зафиксировано)
+  - [x] M3: AuthZ на сервере; скрытие в UI ≠ authorization
+  - [x] M4: Нет secrets/tokens в репозитории, FEATURE или evidence-артефактах
 - Security should:
-  - [ ] S1: Short session TTL + explicit logout invalidates session
-- Notes: Golden scenario for harness v1 (not a product implementation).
+  - [ ] S1: Короткий TTL сессии + явный logout инвалидирует сессию
+- Notes: Золотой сценарий для harness v1 (не продуктовая реализация).

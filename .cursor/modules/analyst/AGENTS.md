@@ -1,13 +1,13 @@
 # Module: analyst
 
-Modes via OUTBOX `task_type`: `spec` | `accept`.
+Режимы через OUTBOX `task_type`: `spec` | `accept`.
 
 ## Start
 
-1. Confirm OUTBOX assigns `analyst` and `task_type`.
-2. Read shared invariants + evidence-schema.
-3. Read [conventions/INDEX.md](conventions/INDEX.md); load **core**; load uidesign only if GUI; respect CASE/FEATURE `surfaces[]`.
-4. Run [processes/spec.md](processes/spec.md) or [processes/accept.md](processes/accept.md).
-5. Write INBOX; update PROGRESS; **stop**. No routing.
+1. Подтверди, что OUTBOX назначает `analyst` и `task_type`.
+2. Прочитай shared invariants + evidence-schema.
+3. Прочитай [conventions/INDEX.md](conventions/INDEX.md); загрузи **core**; загружай uidesign только при GUI; учитывай CASE/FEATURE `surfaces[]`.
+4. Выполни [processes/spec.md](processes/spec.md) или [processes/accept.md](processes/accept.md).
+5. Запиши INBOX; обнови PROGRESS; **stop**. Без маршрутизации.
 
-Never read foreign `modules/*/conventions` or `processes`. Plan against layer ids only.
+Никогда не читай чужие `modules/*/conventions` или `processes`. Планируй только по layer ids.

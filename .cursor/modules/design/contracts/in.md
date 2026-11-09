@@ -1,6 +1,6 @@
 # design IN
 
-Expect OUTBOX: `assigned_module=design`, `layer=design`, plus:
+Ожидай OUTBOX: `assigned_module=design`, `layer=design`, плюс:
 
 ```text
 feature_path:

@@ -1,18 +1,18 @@
 # eng-ui
 
-**Who reads:** engineering **only when** CASE `design_status=done`. Build angle vs design pack.
+**Кто читает:** engineering **только когда** CASE `design_status=done`. Угол build vs design pack.
 
 ## Must
 
-- Implement UI strictly against FEATURE.design.pack (TOKENS / SCREENS / COMPONENTS).
-- No style invention outside the pack (colors, type, radii, spacing, layout zones).
-- Honor DECISIONS.md fidelity limits; open gaps → blocker / ask via INBOX, do not freestyle brand.
+- Реализуй UI строго по FEATURE.design.pack (TOKENS / SCREENS / COMPONENTS).
+- Без style invention вне pack (colors, type, radii, spacing, layout zones).
+- Соблюдай fidelity limits из DECISIONS.md; открытые gaps → blocker / ask через INBOX, не freestyle brand.
 
 ## Should
 
-- Prefer CSS variables / tokens mirroring TOKENS.md role names.
+- Предпочитай CSS variables / tokens, зеркалящие role names из TOKENS.md.
 
 ## Forbidden
 
-- Interpreting PNG refs as sole SoR when pack exists; reading design module conventions; copying qa-web as this file.
-- Loading this file when `design_status` is `skipped` or `not_applicable`.
+- Интерпретировать PNG refs как единственный SoR, когда pack существует; читать conventions модуля design; копировать qa-web как этот файл.
+- Загружать этот файл, когда `design_status` равен `skipped` или `not_applicable`.

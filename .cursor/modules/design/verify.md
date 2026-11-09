@@ -1,12 +1,12 @@
 # design verify
 
-Pack DoD — `pass` / `pack_complete=true` only if all hold:
+Pack DoD — `pass` / `pack_complete=true` только если всё выполняется:
 
-- `refs/_index.md` valid: each screen_id has existing `primary_ref` file
-- `TOKENS.md`: colors bg, surface, text, text-muted, border, accent; type ≥ body+title+button; space scale; radius; no TBD on primary screens
-- `SCREENS.md`: section per primary screen — zones, key sizes, alignment, states from index
-- `COMPONENTS.md`: controls needed by screens, or explicit `none`
-- `DECISIONS.md`: conflicts / fidelity limits (short ok)
-- FEATURE.design.pack + screens filled
+- `refs/_index.md` валиден: у каждого screen_id есть существующий файл `primary_ref`
+- `TOKENS.md`: colors bg, surface, text, text-muted, border, accent; type ≥ body+title+button; space scale; radius; без TBD на primary screens
+- `SCREENS.md`: секция на каждый primary screen — zones, key sizes, alignment, states из index
+- `COMPONENTS.md`: controls, нужные screens, или явно `none`
+- `DECISIONS.md`: conflicts / fidelity limits (кратко ок)
+- FEATURE.design.pack + screens заполнены
 
-Else `needs_input` or `blocked`. No brand invention beyond refs. No product code.
+Иначе `needs_input` или `blocked`. Без brand invention сверх refs. Без product code.

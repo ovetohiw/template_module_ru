@@ -1,6 +1,6 @@
-# TOKENS (template)
+# TOKENS (шаблон)
 
-Fill by design module. Do not invent brand without refs.
+Заполняет design-модуль. Не выдумывать бренд без refs.
 
 ## Color
 

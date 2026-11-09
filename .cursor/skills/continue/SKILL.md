@@ -1,13 +1,13 @@
 ---
 name: continue
 description: >-
-  Continues the active case from files. Use for /continue or continue the
-  pipeline without guessing the role.
+  Продолжает активный кейс из файлов. Для /continue или продолжения
+  пайплайна без угадывания роли.
 ---
 
 # continue
 
-1. Read orchestrator CASE + PROGRESS + OUTBOX + INBOX only.
-2. If OUTBOX pending → tell user to run the matching `role-*` (or run that skill); do not route.
-3. If INBOX pending → orchestrator routing turn per `.cursor/orchestrator/AGENTS.md`.
-4. Never invent role from chat. Never start two roles in one turn.
+1. Читай только orchestrator CASE + PROGRESS + OUTBOX + INBOX.
+2. Если OUTBOX pending → скажи пользователю запустить соответствующий `role-*` (или запусти этот skill); не маршрутизируй.
+3. Если INBOX pending → ход маршрутизации оркестратора по `.cursor/orchestrator/AGENTS.md`.
+4. Никогда не invent роль из чата. Никогда не стартуй две роли в одном ходе.

@@ -1,5 +1,5 @@
 # security verify
 
-- must[] items explicit; empty must with pass only if N/A justified
-- blocked when unresolved security ambiguity
-- No product code changes
+- must[] items явные; пустой must с pass только если N/A обоснован
+- blocked при unresolved security ambiguity
+- Без изменений product code

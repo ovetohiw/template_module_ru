@@ -1,21 +1,21 @@
 # eng-test
 
-**Who reads:** engineering (write tests at build). **Who does not:** qa (see qa-test).
+**Кто читает:** engineering (пишет tests на build). **Кто не читает:** qa (см. qa-test).
 
 ## Must
 
-- New/changed behavior: add or update automated checks before claiming package ready.
-- Bugfix: regression that fails before fix and passes after.
-- Prefer observable behavior over private call-order asserts.
-- Mock boundaries (time, network, FS, third parties) — not the unit under test.
-- Run affected tests via commands in `shared/stack.md` or OUTBOX only; empty slots → record explicitly, do not invent runners.
-- No real secrets/PII in fixtures.
+- Новое/изменённое behavior: добавь или обнови automated checks до claim, что package ready.
+- Bugfix: regression, который падает до фикса и проходит после.
+- Предпочитай observable behavior, а не asserts порядка приватных вызовов.
+- Mock boundaries (time, network, FS, third parties) — не unit under test.
+- Запускай affected tests командами только из `shared/stack.md` или OUTBOX; пустые слоты → явно зафиксируй, не изобретай runners.
+- Без реальных secrets/PII в fixtures.
 
 ## Should
 
-- Name tests by behavior + expected outcome; arrange–act–assert.
-- Trace to behavior scenario ids when present.
+- Именуй tests по behavior + expected outcome; arrange–act–assert.
+- Трассируй к behavior scenario ids, когда они есть.
 
 ## Forbidden
 
-- Fake green; silent skip of required tests; copying qa-test as this canon; claiming independent qa verify.
+- Fake green; молчаливый skip обязательных tests; копирование qa-test как этот canon; claim независимого qa verify.

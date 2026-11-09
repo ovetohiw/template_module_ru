@@ -1,11 +1,11 @@
 ---
 name: role-analyst
 description: >-
-  Runs analyst module when OUTBOX assigns analyst (spec or accept).
+  Запускает модуль analyst, когда OUTBOX назначает analyst (spec или accept).
 ---
 
 # role-analyst
 
-1. Require OUTBOX `assigned_module=analyst` and pending; else hard.
-2. Follow `.cursor/modules/analyst/AGENTS.md` + matching process.
-3. Write INBOX; mark OUTBOX done; stop. No routing.
+1. Требуй OUTBOX `assigned_module=analyst` и pending; иначе hard.
+2. Следуй `.cursor/modules/analyst/AGENTS.md` + соответствующий process.
+3. Запиши INBOX; пометь OUTBOX done; стоп. Без routing.

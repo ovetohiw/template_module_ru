@@ -7,5 +7,5 @@ scope_out: []
 open_questions: []
 feature_path:            # cases/current/FEATURE.md
 behavior_paths: []
-work_packages: []        # see work_package.md
+work_packages: []        # см. work_package.md
 ```

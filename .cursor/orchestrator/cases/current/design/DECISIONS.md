@@ -1,5 +1,5 @@
-# DECISIONS (template)
+# DECISIONS (шаблон)
 
-Conflicts between refs, fidelity limits, ignored chrome, open simplifications.
+Конфликты между refs, пределы fidelity, игнорируемый chrome, открытые упрощения.
 
-- (none yet)
+- (пока нет)

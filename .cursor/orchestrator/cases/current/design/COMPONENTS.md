@@ -1,6 +1,6 @@
-# COMPONENTS (template)
+# COMPONENTS (шаблон)
 
-Shared controls referenced by SCREENS. Use `none` if not applicable.
+Общие controls, на которые ссылается SCREENS. Используйте `none`, если неприменимо.
 
 ## none | list
 

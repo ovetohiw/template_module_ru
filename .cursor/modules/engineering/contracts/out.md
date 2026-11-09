@@ -1,3 +1,3 @@
 # engineering OUT
 
-Envelope → INBOX. Payload: [layers/implementation.md](../../../orchestrator/contracts/layers/implementation.md). No `to_role`.
+Envelope → INBOX. Payload: [layers/implementation.md](../../../orchestrator/contracts/layers/implementation.md). Нет `to_role`.

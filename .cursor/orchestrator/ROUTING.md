@@ -2,7 +2,7 @@
 
 ## Bind layer → module
 
-| Layer | Module path | Skill |
+| Layer | Путь модуля | Skill |
 |-------|-------------|-------|
 | requirements | `.cursor/modules/analyst` | role-analyst (`task_type=spec`) |
 | design | `.cursor/modules/design` | role-design |
@@ -13,64 +13,64 @@
 
 ## Serial order (v1)
 
-After plan_review pass, issue packages in order:
+После plan_review pass выдавай пакеты по порядку:
 
-1. all ready `security`
-2. all ready `implementation`
-3. all ready `verification`
-4. then stage `acceptance`
+1. все ready `security`
+2. все ready `implementation`
+3. все ready `verification`
+4. затем stage `acceptance`
 
-Ready = deps satisfied. One OUTBOX at a time.
+Ready = deps удовлетворены. Один OUTBOX за раз.
 
-`design` is **not** in this serial list (stage-gate before plan_review, or design-rework mid-execution).
+`design` **не** в этом serial-списке (stage-gate до plan_review, либо design-rework mid-execution).
 
 ## Classification (INBOX → next)
 
-### Analyst spec pass (including rework after plan_review fail)
+### Analyst spec pass (включая rework после plan_review fail)
 
-Recompute `design_required` from FEATURE.surfaces + design_skip:
+Пересчитай `design_required` из FEATURE.surfaces + design_skip:
 
-1. If `design_required` AND `design_status != done` → stage=`design`; `design_status=pending`; OUTBOX design
-2. Else if `design_required` AND `design_status == done` → plan_review
-3. Else if web|desktop in surfaces AND design_skip → `design_status=skipped`; plan_review
-4. Else → `design_status=not_applicable`; plan_review
+1. Если `design_required` И `design_status != done` → stage=`design`; `design_status=pending`; OUTBOX design
+2. Иначе если `design_required` И `design_status == done` → plan_review
+3. Иначе если web|desktop в surfaces И design_skip → `design_status=skipped`; plan_review
+4. Иначе → `design_status=not_applicable`; plan_review
 
 ### Design
 
-| Signal | Next |
+| Сигнал | Next |
 |--------|------|
-| design `pass` | `design_status=done`. If `design_rework_from=verification`: clear flag; re-issue same implementation package; stage=`execution`. Else → plan_review |
-| design `needs_input` / `blocked` | stop; no plan_review; no impl |
+| design `pass` | `design_status=done`. Если `design_rework_from=verification`: очисти флаг; повторно выдай тот же implementation package; stage=`execution`. Иначе → plan_review |
+| design `needs_input` / `blocked` | стоп; без plan_review; без impl |
 
 ### Plan review / execution / accept
 
-| Signal | Next |
+| Сигнал | Next |
 |--------|------|
-| plan_review fail | analyst spec (blockers); keep `design_status=done` unless blockers say pack invalid |
-| plan_review pass | first ready execution package |
-| security `pass` | next ready package |
+| plan_review fail | analyst spec (blockers); держи `design_status=done`, если blockers не говорят, что pack invalid |
+| plan_review pass | первый ready execution package |
+| security `pass` | следующий ready package |
 | security `blocked` | blocked / human |
-| implementation `pass` | next ready package |
-| verification `pass` | acceptance (when all verification packages done) |
-| verification `fail` | see rework_target below |
+| implementation `pass` | следующий ready package |
+| verification `pass` | acceptance (когда все verification packages done) |
+| verification `fail` | см. rework_target ниже |
 | acceptance `pass` | closed |
-| acceptance `fail` | rework → implementation (or requirements) |
-| any incomplete envelope | hard; do not advance |
-| payload contains `to_role` / peer address | invalid; hard |
+| acceptance `fail` | rework → implementation (или requirements) |
+| любой неполный envelope | hard; не продвигай |
+| payload содержит `to_role` / peer address | invalid; hard |
 
 ### Verification fail → rework_target
 
-Read `findings[].rework_target` (default `implementation` if missing):
+Читай `findings[].rework_target` (по умолчанию `implementation`, если нет):
 
 | rework_target | Next |
 |---------------|------|
-| `implementation` | OUTBOX engineering (as today) |
+| `implementation` | OUTBOX engineering (как сейчас) |
 | `design` | set `design_rework_from=verification`; stage=`design`; `design_status=pending`; OUTBOX design (`rework: true`) |
 | `requirements` | OUTBOX analyst spec |
 
-`round++` per fail class; max 2 → blocked.
+`round++` на класс фейла; макс. 2 → blocked.
 
-## Design OUTBOX brief fields
+## Поля design OUTBOX brief
 
 ```text
 assigned_module: design
@@ -85,4 +85,4 @@ rework: false|true
 
 ## Conventions
 
-Do **not** copy or relay `modules/*/conventions` via OUTBOX. Downstream modules read FEATURE / plan / evidence / design pack paths and their **own** role-prefixed conventions only (gated by `surfaces[]`). Security must live in FEATURE after security hop. Design pack lives under FEATURE.design after design hop. `shared/stack.md` is allowed for runners. `shared/mcp-tools.md` is allowed for MCP policy (not a convention relay).
+**Не** копируй и не ретранслируй `modules/*/conventions` через OUTBOX. Downstream-модули читают пути FEATURE / plan / evidence / design pack и **свои** role-prefixed conventions (гейтятся `surfaces[]`). Security должен жить в FEATURE после security hop. Design pack живёт под FEATURE.design после design hop. `shared/stack.md` разрешён для runners. `shared/mcp-tools.md` разрешён для политики MCP (не convention relay).

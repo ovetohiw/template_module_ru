@@ -1,3 +1,3 @@
 # qa IN
 
-OUTBOX: `layer=verification`, package acceptance, implementation artifacts. Raw user brief alone is invalid input.
+OUTBOX: `layer=verification`, package acceptance, implementation artifacts. Один только raw user brief — невалидный input.

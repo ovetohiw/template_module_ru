@@ -1,12 +1,12 @@
-# Scenario: register and login
+# Сценарий: регистрация и вход
 
 ## Happy path
 
-1. Open register form; submit valid email+password.
-2. System creates user; session authenticated.
-3. Logout; login with same credentials succeeds.
+1. Открыть форму register; отправить валидные email+password.
+2. Система создаёт пользователя; сессия authenticated.
+3. Logout; login с теми же credentials успешен.
 
 ## Failures
 
-- Duplicate email → visible error; no session.
-- Invalid credentials → visible error; no session.
+- Дубликат email → видимая ошибка; без сессии.
+- Неверные credentials → видимая ошибка; без сессии.
